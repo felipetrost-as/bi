@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .beliebte-artikeln {
+        text-align: left;
+        font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif;
+        --padding-bottom: 15px;
+        --margin-bottom: 15px;
+
+        --mobile-link-size: 14px;
+        --mobile-link-line-height: 18.9px;
+      }
+
+      .beliebte-artikeln a {
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+        transition: 0.2s ease border;
+        border-bottom: 1px solid transparent;
+        line-height: 21.6px;
+      }
+
+      .beliebte-artikeln a:hover {
+        border-bottom: 1px solid black;
+      }
+
+      .beliebte-artikeln > div {
+        height: 400px;
+        overflow-y: scroll;
+      }
+
+      /* Alle direkte kinder */
+      .beliebte-artikeln > div > *,
+      .beliebte-artikeln h2 {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #e8e9ea;
+        margin-bottom: var(--margin-bottom);
+        padding-bottom: var(--padding-bottom);
+      }
+
+      .beliebte-artikeln h2 {
+        color: #111111;
+        font-size: 13px;
+        letter-spacing: 2.08px;
+      }
+
+      @media (max-width: 600px) {
+        .beliebte-artikeln a {
+          font-size: var(--mobile-link-size);
+          line-height: var(--mobile-link-line-height);
+        }
+      }
+    </style>
+    <section class="beliebte-artikeln">
+      <h2>Beliebte Artikel</h2>
+      <div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            Das passiert mit euren Anteilen, wenn ihr gekündigt werdet
+          </a>
+        </div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            Trend-Berufe 2023: Diese 25 Jobs sind jetzt besonders gefragt
+          </a>
+        </div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            So viel könnt ihr in einem Startup verdienen – als Einsteiger,
+            Team-Lead oder Chef
+          </a>
+        </div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            So viel könnt ihr in einem Startup verdienen – als Einsteiger,
+            Team-Lead oder Chef
+          </a>
+        </div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            So viel könnt ihr in einem Startup verdienen – als Einsteiger,
+            Team-Lead oder Chef
+          </a>
+        </div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            So viel könnt ihr in einem Startup verdienen – als Einsteiger,
+            Team-Lead oder Chef
+          </a>
+        </div>
+        <div>
+          <a href="https://google.com" class="artikel">
+            So viel könnt ihr in einem Startup verdienen – als Einsteiger,
+            Team-Lead oder Chef
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
