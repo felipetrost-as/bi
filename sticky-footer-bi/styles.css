@@ -1,0 +1,321 @@
+@font-face {
+  font-family: "LabGrotesque";
+  src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+      format("woff2"),
+    url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bi-premium-label {
+  display: block;
+  width: 46px;
+  height: 34px;
+  z-index: 1;
+  margin: 0 20px 0 0;
+  border: 1px solid white;
+}
+
+body {
+  height: 100vh;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#checkout-container {
+  background-color: transparent;
+}
+
+#png-up {
+  width: 14px;
+  height: 9px;
+}
+
+#png-up.active {
+  display: none;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: LabGrotesque Black, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#btn1 {
+  font-family: LabGrotesque, Helvetica, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+}
+
+.round-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 100%;
+  background: #096ffa;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.round-box img {
+  position: relative;
+  top: 2px;
+}
+
+#link1 {
+  color: #ffffff;
+  font-family: LabGrotesque Black, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#box {
+  width: 100%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  flex-direction: row;
+  position: static;
+  transition: transform 0.4s linear;
+}
+
+#box.active {
+  transform: translateY(7px);
+}
+
+#box:before {
+  content: "";
+  display: none;
+  flex: 1;
+  position: relative;
+  z-index: -9999;
+}
+
+#div-wrapper {
+  display: flex;
+  height: 80px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 15px;
+  flex-grow: 1;
+  position: relative;
+  background: #096ffa;
+  margin-top: 22px;
+  /* entrance animation */
+  animation-duration: 0.5s;
+  animation-name: entrance;
+}
+
+#right-box {
+  height: 20px;
+  /*  margin-left:15px;*/
+}
+
+.box-1 {
+  width: 100%;
+  padding: 15px 0 15px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  /* padding-bottom: 70px; */
+  /* border-bottom: 0.8px dashed white; */
+}
+
+.column {
+  font-family: LabGrotesque, Helvetica, sans-serif;
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#bi-logo {
+  width: 46px;
+  height: 34px;
+  margin: 0 10px 0 0;
+}
+
+#close-x {
+  width: 14px;
+  height: 14px;
+  margin: 0 0 0 10px;
+  cursor: pointer;
+  display: none;
+}
+
+#box.active #close-x {
+  display: block;
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  #div-wrapper {
+    width: 100%;
+  }
+
+  .box-1 {
+    margin: 5px 10px;
+    /* padding-bottom: 70px; */
+  }
+
+  #right-box {
+    height: 20px;
+  }
+
+  .box-2 {
+    width: 95%;
+  }
+
+  #box.active {
+    transform: translateY(0);
+  }
+
+  #link1 {
+    font-size: 20px;
+    text-decoration: underline;
+  }
+
+  #btn1 {
+    display: none;
+  }
+
+  #btn3 {
+    display: block;
+  }
+
+  #box.active #btn3 {
+    display: none;
+  }
+
+  /* .round-box {
+    width: 68px;
+    height: 68px;
+    top: -40px;
+  } */
+
+  .handy-button {
+    display: block;
+    margin: 0 auto 0 auto;
+  }
+
+  #png-up {
+    width: 14px;
+    height: 9px;
+  }
+
+  #png-up.active {
+    display: none;
+  }
+
+  #png-down {
+    width: 14px;
+    height: 9px;
+    display: none;
+  }
+
+  #png-down.active {
+    display: block;
+  }
+
+  h3 {
+    font-family: LabGrotesque, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    color: #ffffff;
+  }
+
+  h1 {
+    color: #ffffff;
+    font-family: LabGrotesque Black, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    font-family: LabGrotesque, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+    color: #ffffff;
+  }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  #div-wrapper {
+    width: 768px;
+  }
+  #box {
+    /*transform: translateY(calc(100% - 65px));*/
+  }
+  .box-1 {
+    margin: 0 10px;
+    padding: 15px 0;
+    /*padding-bottom: 70px;*/
+  }
+
+  #right-box {
+    height: 20px;
+  }
+
+  /* #box.active #btn1 {
+    display: none;
+  } */
+  #btn2 {
+    margin: 0;
+  }
+}
+
+/* Desktop-small breakpoint */
+@media (min-width: 1025px) {
+  #div-wrapper {
+    width: 990px;
+    padding: 0 30px;
+  }
+}
+#right-box {
+  height: 20px;
+}
+
+/* Desktop-wide breakpoint */
+@media (min-width: 1280px) {
+  #box:before {
+    display: block;
+  }
+  #div-wrapper {
+    width: 1230px;
+    max-width: 1230px;
+  }
+  #right-box {
+    flex: 1;
+    min-width: 315px;
+    margin-left: 15px;
+  }
+}
