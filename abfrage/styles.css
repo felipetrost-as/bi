@@ -95,3 +95,7 @@ ul.page-section {
     font-size: 17.5px;
   }
 }
+
+.submit-button {
+  font-weight: bold;
+}
