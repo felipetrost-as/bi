@@ -1,104 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <style>
-      .pill-container {
-        --font-color: black;
-        --border-color: #8ca8ac;
-        --pill-padding-horizontal: 16px;
-        --pill-padding-vertical: 8px;
-        --pill-spacing: 10px;
-        --pill-hover-color: white;
-        --pill-hover-background: black;
-        --font-size: 14px;
-        --container-padding: 0px;
+<style>
+  .pill-container {
+    --font-color: black;
+    --border-color: #8ca8ac;
+    --pill-padding-horizontal: 16px;
+    --pill-padding-vertical: 8px;
+    --pill-spacing: 10px;
+    --pill-hover-color: white;
+    --pill-hover-background: black;
+    --font-size: 14px;
+    --container-padding: 0px;
 
-        padding: var(--container-padding);
-        /* overflow-x: scroll;
+    padding: var(--container-padding);
+    /* overflow-x: scroll;
         white-space: nowrap; */
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: var(--pill-spacing);
-      }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--pill-spacing);
+  }
 
-      .pill-container .pill {
-        font-family: LabGrotesque, Helvetica, Arial, sans-serif;
-        display: inline-block;
-        padding: var(--pill-padding-vertical) var(--pill-padding-horizontal);
-        border-radius: 50px;
-        border: 1px solid var(--border-color);
-        transition: 0.2s ease color;
-      }
+  .pill-container .pill {
+    font-family: LabGrotesque, Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: var(--pill-padding-vertical) var(--pill-padding-horizontal);
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    transition: 0.2s ease color;
+  }
 
-      .pill-container .pill:last-child {
-        margin-right: 0;
-      }
+  .pill-container .pill:last-child {
+    margin-right: 0;
+  }
 
-      .pill-container .pill a {
-        width: fit-content;
-        color: var(--font-color);
-        text-decoration: none;
-        transition: 0.2s ease color;
-        font-weight: normal;
-        font-size: var(--font-size);
-      }
+  .pill-container .pill a {
+    width: fit-content;
+    color: var(--font-color);
+    text-decoration: none;
+    transition: 0.2s ease color;
+    font-weight: normal;
+    font-size: var(--font-size);
+  }
 
-      .pill-container .pill:hover > a {
-        color: var(--pill-hover-color) !important;
-      }
+  .pill-container .pill:hover > a {
+    color: var(--pill-hover-color) !important;
+  }
 
-      .pill-container .pill:hover {
-        background-color: var(--pill-hover-background) !important;
-        border: 1px solid var(--pill-hover-background);
-      }
+  .pill-container .pill:hover {
+    background-color: var(--pill-hover-background) !important;
+    border: 1px solid var(--pill-hover-background);
+  }
 
-      .pill-wrapper {
-        --padding-bottom: 10px;
-        --margin-bottom: 10px;
-        margin-bottom: var(--margin-bottom) !important;
-        padding-bottom: var(--padding-bottom) !important;
-        border-bottom: 1px solid #e8e9ea !important;
-      }
+  .pill-wrapper {
+    --padding-bottom: 10px;
+    --margin-bottom: 10px;
+    margin-bottom: var(--margin-bottom) !important;
+    padding-bottom: var(--padding-bottom) !important;
+    border-bottom: 1px solid #e8e9ea !important;
+  }
 
-      .pill-wrapper p {
-        color: #111111;
-        font-size: 13px;
-        letter-spacing: 2.08px;
-        margin-bottom: var(--margin-bottom);
-        padding-bottom: var(--padding-bottom);
-        border-bottom: 1px solid #e8e9ea;
-      }
-    </style>
+  .pill-wrapper p {
+    color: #111111;
+    font-size: 13px;
+    letter-spacing: 2.08px;
+    margin-bottom: var(--margin-bottom);
+    padding-bottom: var(--padding-bottom);
+    border-bottom: 1px solid #e8e9ea;
+  }
+</style>
 
-    <div
-      class="pill-wrapper"
-      style="padding-bottom: 30px; border-bottom: 1px solid #e8e9ea"
-    >
-      <p>Beispiel Titel</p>
-      <div class="pill-container">
-        <div class="pill">
-          <a href="https://google.com">Thema lol</a>
-        </div>
-        <span class="pill">
-          <a href="https://google.com">Arbeitsleben</a>
-        </span>
-        <span class="pill">
-          <a href="https://google.com">Europa</a>
-        </span>
-        <span class="pill">
-          <a href="https://google.com">USA</a>
-        </span>
-        <span class="pill">
-          <a href="https://google.com">Weltwirtschaftsforum</a>
-        </span>
-      </div>
+<div
+  class="pill-wrapper"
+  style="padding-bottom: 30px; border-bottom: 1px solid #e8e9ea"
+>
+  <p>Beispiel Titel</p>
+  <div class="pill-container">
+    <div class="pill">
+      <a href="https://google.com">Thema lol</a>
     </div>
-  </body>
-</html>
+    <span class="pill">
+      <a href="https://google.com">Arbeitsleben</a>
+    </span>
+    <span class="pill">
+      <a href="https://google.com">Europa</a>
+    </span>
+    <span class="pill">
+      <a href="https://google.com">USA</a>
+    </span>
+    <span class="pill">
+      <a href="https://google.com">Weltwirtschaftsforum</a>
+    </span>
+  </div>
+</div>
