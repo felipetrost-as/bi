@@ -20,6 +20,12 @@
   }
 }
 
+.hidden {
+  transition: all 0.5s !important;
+  transform: translateY(50%) !important;
+  opacity: 0 !important;
+}
+
 /* black, grey case */
 .grey-gift {
   display: block;
@@ -128,7 +134,7 @@ h1 {
   color: #096ffa;
 }
 
-#box {
+#piano-footer-wrapper {
   width: 100%;
   display: flex;
   align-items: top;
@@ -138,11 +144,11 @@ h1 {
   transition: transform 0.4s linear;
 }
 
-#box.active {
+#piano-footer-wrapper.active {
   transform: translateY(7px);
 }
 
-#box:before {
+#piano-footer-wrapper:before {
   content: "";
   display: none;
   flex: 1;
@@ -170,6 +176,7 @@ h1 {
 #div-wrapper.grey {
   background: transparent linear-gradient(180deg, #fff 0%, #e8e9ea 100%) 0% 0%
     no-repeat padding-box;
+  box-shadow: 0px -1px 6px #00000029;
 }
 
 #right-box {
@@ -197,6 +204,15 @@ h1 {
   flex-direction: row;
 }
 
+#piano-footer-wrapper button {
+  color: #ffffff;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 21px;
+}
+
 .column section p {
   color: #ffffff;
   font-family: LabGrotesque, Helvetica, sans-serif;
@@ -204,9 +220,12 @@ h1 {
   margin: 0;
   max-width: 588px;
 }
+#piano-footer-wrapper .black button,
 .black .column section p {
   color: #ffffff;
 }
+
+#piano-footer-wrapper .grey button,
 .grey .column section p {
   color: #111516;
 }
@@ -217,15 +236,7 @@ h1 {
   margin: 0 10px 0 0;
 }
 
-#close-x {
-  width: 14px;
-  height: 14px;
-  margin: 0 0 0 10px;
-  cursor: pointer;
-  display: none;
-}
-
-#box.active #close-x {
+#piano-footer-wrapper.active #close-x {
   display: block;
 }
 
@@ -239,7 +250,7 @@ h1 {
     margin: 5px 10px;
   }
 
-  #box.active {
+  #piano-footer-wrapper.active {
     transform: translateY(0);
   }
 
@@ -260,7 +271,7 @@ h1 {
     display: block;
   }
 
-  #box.active #btn3 {
+  #piano-footer-wrapper.active #btn3 {
     display: none;
   }
 
@@ -326,7 +337,7 @@ h1 {
   #div-wrapper {
     width: 768px;
   }
-  #box {
+  #piano-footer-wrapper {
     /*transform: translateY(calc(100% - 65px));*/
   }
   .box-1 {
@@ -339,7 +350,7 @@ h1 {
     height: 20px;
   }
 
-  /* #box.active #btn1 {
+  /* #piano-footer-wrapper.active #btn1 {
     display: none;
   } */
   #btn2 {
@@ -360,7 +371,7 @@ h1 {
 
 /* Desktop-wide breakpoint */
 @media (min-width: 1280px) {
-  #box:before {
+  #piano-footer-wrapper:before {
     display: block;
   }
   #div-wrapper {
