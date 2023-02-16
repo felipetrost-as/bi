@@ -361,13 +361,16 @@
       const scrollDiv = document.querySelector(".hcarousel .horizontal-scroll");
       const items = document.querySelectorAll(".hcarousel .item");
 
-      const { x: leftOffset } = scrollDiv.getBoundingClientRect();
+      let leftOffset = scrollDiv.getBoundingClientRect().x;
+      window.addEventListener("resize", (event) => {
+        leftOffset = scrollDiv.getBoundingClientRect().x;
+      });
+
       const paddingLeft = 10;
 
       function getActiveItem() {
         for (const item of items) {
           if (item.getBoundingClientRect().x - leftOffset > 0) {
-            console.log("active", item);
             return item;
           }
         }
@@ -384,15 +387,13 @@
       }
 
       prevButton.addEventListener("click", () => {
-        const target = getActiveItem().nextElementSibling;
-        console.log("target", target);
-        scrollTo(getActiveItem().previousElementSibling);
+        const target = getActiveItem().previousElementSibling;
+        scrollTo(target);
       });
 
       nextButton.addEventListener("click", () => {
         const target = getActiveItem().nextElementSibling;
-        console.log("target", target);
-        scrollTo(getActiveItem().nextElementSibling);
+        scrollTo(target);
       });
     </script>
   </body>
