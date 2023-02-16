@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <style>
+      @font-face {
+        font-family: "LabGrotesque-Black";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+            format("woff");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+      .form-container * {
+        margin: 0;
+        padding: 0;
+      }
+      .form-container h1 {
+        font-family: LabGrotesque-Black, Helvetica, sans-serif;
+        font-size: 22px;
+        color: #111516;
+        margin-left: 0;
+        font-weight: bold;
+      }
+      .form-container .rate {
+        pointer-events: none;
+      }
+      .form-container .rate a {
+        pointer-events: auto;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      .form-container .rate a,
+      .form-container .rate a:hover ~ a {
+        color: #000;
+        text-shadow: none;
+        transition: color 200ms;
+        transition-delay: 0;
+      }
+      .form-container .rate:hover a {
+        color: #096ffa;
+      }
+      .form-container .rate a {
+        cursor: pointer;
+        letter-spacing: 10px;
+      }
+
+      .form-container .rate {
+        align-items: center;
+        /* background: #000; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 48px;
+        height: 100%;
+        justify-content: left;
+      }
+    </style>
+    <div class="form-container">
+      <h1>Hallo lieber leser</h1>
+      <ul class="rate">
+        <a href="/1">★</a>
+        <a href="/2">★</a>
+        <a href="/3">★</a>
+        <a href="/4">★</a>
+        <a href="/5">★</a>
+        <a href="/6">★</a>
+        <a href="/7">★</a>
+        <a href="/8">★</a>
+        <a href="/9">★</a>
+        <a href="/10">★</a>
+      </ul>
+    </div>
+  </body>
+</html>
