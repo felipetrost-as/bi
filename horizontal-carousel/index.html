@@ -8,6 +8,16 @@
   </head>
   <body>
     <style>
+      @font-face {
+        font-family: "LabGrotesque";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+            format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -47,15 +57,15 @@
 
       .hcarousel .carousel-container .item {
         flex-shrink: 0;
-        box-shadow: 0px 6px 20px -10px;
-        width: 185px;
+        width: 245px;
         height: fit-content;
+        box-shadow: 0 10px 10px #00000026;
         border-radius: 10px;
         overflow-x: hidden;
       }
       .hcarousel .carousel-container .item img {
         display: block;
-        height: 151px;
+        height: 200px;
         width: auto;
         margin-left: 50%;
         transform: translateX(-50%);
@@ -63,8 +73,9 @@
       }
 
       .hcarousel .carousel-container .item .text {
-        padding: 25px;
-        padding-top: 0;
+        width: 136px;
+        margin: auto;
+        padding-bottom: 25px;
       }
       .hcarousel .carousel-container .item .text .title {
         font-family: LabGrotesque Black, Helvetica, sans-serif;
@@ -97,11 +108,14 @@
         height: 50px;
         width: 50px;
         transition: all 0.3s ease;
+        /* Center svgs */
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .hcarousel button:hover {
-        background-color: #8ca8ac;
-        color: #fff;
+        border: 1px solid #006afe;
       }
 
       .hcarousel > .title {
@@ -114,6 +128,21 @@
         border-bottom: 1px solid #707070;
         padding-bottom: 15px;
         margin-bottom: 15px;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .hcarousel .carousel-container .item {
+          width: 185px;
+        }
+        .hcarousel .carousel-container .item .text {
+          width: 159px;
+          margin: auto;
+          padding-bottom: 25px;
+        }
+        .hcarousel .carousel-container .item img {
+          height: 151px;
+        }
       }
     </style>
     <div class="hcarousel">
@@ -294,8 +323,12 @@
         </div>
       </div>
       <div class="buttons">
-        <button id="prev"><</button>
-        <button id="next">></button>
+        <button id="prev">
+          <img src="arrow_left.svg" />
+        </button>
+        <button id="next">
+          <img src="arrow_right.svg" />
+        </button>
       </div>
     </div>
     <script>
