@@ -8,15 +8,6 @@
   </head>
   <body>
     <!-- Copy: start here  -->
-    <script
-      src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.39635"
-      type="text/javascript"
-    ></script>
-    <script
-      src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.39635"
-      type="text/javascript"
-    ></script>
-
     <style>
       @font-face {
         font-family: "LabGrotesque";
@@ -42,7 +33,6 @@
       .updown * {
         margin: 0;
         padding: 0;
-        height: ;
         box-sizing: border-box;
       }
       .updown {
@@ -50,8 +40,12 @@
         border-bottom: 1px solid #757575;
         padding: 30px 0;
       }
-      .updown button {
-        background-color: transparent;
+      .updown form {
+        width: fit-content;
+      }
+      .updown button.thumb {
+        display: block;
+        background-color: transparent !important;
         border: none;
         outline: none;
         background-image: none !important;
@@ -127,7 +121,7 @@
           <button
             id="likebtn"
             type="submit"
-            class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+            class="thumb form-submit-button submit-button jf-form-buttons jsTest-submitField"
             data-component="button"
             data-content=""
           >
@@ -198,7 +192,7 @@
           <button
             id="dislikebtn"
             type="submit"
-            class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+            class="thumb form-submit-button submit-button jf-form-buttons jsTest-submitField"
             data-component="button"
             data-content=""
           >
@@ -254,28 +248,422 @@
         </form>
       </div>
       <div id="commentary">
-        <script
-          type="text/javascript"
-          src="https://form.jotform.com/jsform/230542751600042"
-        ></script>
+        <!-- Comments form: start -->
         <script type="text/javascript">
-          this.customHeightSetBP = function (e) {
-            if (!e.data || !e.data.split) return;
-            var args = e.data.split(":");
-            // Change the id here
-            if (args[2] != "230542751600042") {
-              return;
+          JotForm.newDefaultTheme = true;
+          JotForm.extendsNewTheme = false;
+          JotForm.singleProduct = false;
+          JotForm.newPaymentUIForNewCreatedForms = true;
+          JotForm.newPaymentUI = true;
+          JotForm.clearFieldOnHide = "disable";
+          JotForm.submitError = "jumpToFirstError";
+
+          JotForm.init(function () {
+            /*INIT-START*/
+            if (window.JotForm && JotForm.accessible)
+              $("input_3").setAttribute("tabindex", 0);
+            JotForm.alterTexts({
+              ageVerificationError:
+                "Sie müssen älter als {minAge} Jahre sein, um dieses Formular absenden zu können.",
+              alphabetic: "Dieses Feld darf nur Buchstaben enthalten",
+              alphanumeric:
+                "Dieses Feld darf nur Buchstaben und Zahlen enthalten.",
+              appointmentSelected: "Sie haben {time} am {date} ausgewählt",
+              ccDonationMinLimitError:
+                "Der Minimalbetrag ist {minAmount}{currency}",
+              ccInvalidCVC: "Kartenprüfnummer (CVC) ist ungültig.",
+              ccInvalidExpireDate: "Gültigkeitsdatum ist ungültig.",
+              ccInvalidNumber: "Kreditkartennummer ist ungültig.",
+              ccMissingDetails: "Please fill up the credit card details.",
+              ccMissingDonation:
+                "Bitte geben Sie einen Zahlenwert als Spendenbetrag ein.",
+              ccMissingProduct: "Bitte wählen Sie mindestens ein Produkt.",
+              characterLimitError: "Zu viele Zeichen. Das Maximum beträgt",
+              characterMinLimitError: "Zu wenige Zeichen. Das Minimum beträgt",
+              confirmClearForm:
+                "Sind Sie sicher, dass Sie das Formular leeren wollen?",
+              confirmEmail: "E-Mail-Adresse stimmt nicht überein",
+              currency: "Dieses Feld darf nur Währungswerte enthalten.",
+              cyrillic: "Dieses Feld darf nur kyrillische Zeichen enthalten.",
+              dateInvalid:
+                "Dieses Datum ist ungültig. Das Datumsformat ist {format}",
+              dateInvalidSeparate:
+                "Dieses Datum ist ungültig. Geben Sie ein gültiges {element} ein.",
+              dateLimited: "Dieses Datum ist nicht verfügbar.",
+              disallowDecimals: "Bitte geben Sie eine ganze Zahl ein.",
+              dragAndDropFilesHere_infoMessage: "Dateien hierher ziehen",
+              email: "Geben Sie eine gültige E-Mail-Adresse ein",
+              fillMask: "Wert muss der Maske entsprechen.",
+              freeEmailError: "Kostenlose E-Mail-Adressen sind nicht erlaubt.",
+              generalError:
+                "Ihr Formular enthält Fehler. Bitte korrigieren Sie diese, bevor Sie fortfahren.",
+              generalPageError:
+                "Diese Seite enthält Fehler. Bitte korrigieren Sie diese, bevor Sie fortfahren.",
+              gradingScoreError:
+                "Ihr Wert sollte nur weniger oder gleich sein zu",
+              incompleteFields:
+                "Es gibt unvollständige Pflichtfelder. Bitte füllen Sie diese aus.",
+              inputCarretErrorA:
+                "Eingabe sollte nicht kleiner als der Minimalwert sein:",
+              inputCarretErrorB:
+                "Eingabe sollte nicht größer als der Maximalwert sein:",
+              justSoldOut: "Gerade ausverkauft",
+              lessThan: "Ihr Wert sollte kleiner oder gleich sein zu",
+              maxDigitsError: "Bitte geben Sie nicht mehr Ziffern ein als",
+              maxFileSize_infoMessage: "Max. Dateigröße",
+              maxSelectionsError:
+                "The maximum number of selections allowed is ",
+              minSelectionsError: "Die kleinste erforderliche Auswahl ist",
+              multipleFileUploads_emptyError:
+                "{file} ist leer. Bitte wählen Sie eine andere Datei.",
+              multipleFileUploads_fileLimitError:
+                "Nur {fileLimit} Dateiuploads sind erlaub!",
+              multipleFileUploads_minSizeError:
+                "{file} ist zu klein. Die minimale Dateigröße ist {minSizeLimit}.",
+              multipleFileUploads_onLeave:
+                "Dateien werden hochgeladen. Bitte verlassen Sie die Seite nicht, bis der Upload abgeschlossen ist.",
+              multipleFileUploads_sizeError:
+                "{file} ist zu groß. Die maximale Dateigröße ist {sizeLimit}.",
+              multipleFileUploads_typeError:
+                "{file} ist ein ungültiges Dateiformat. Nur {extensions} sind erlaubt.",
+              multipleFileUploads_uploadFailed:
+                "File upload failed, please remove it and upload the file again.",
+              noSlotsAvailable: "Keine Termine verfügbar",
+              notEnoughStock: "Nicht genug Bestand für die jetzige Auswahl",
+              notEnoughStock_remainedItems:
+                "Nicht genug Bestand für die jetzige Auswahl ({count} verbleibende Artikel)",
+              noUploadExtensions:
+                "File has no extension file type (e.g. .txt, .png, .jpeg)",
+              numeric: "Dieses Feld darf nur Zahlen enthalten",
+              pastDatesDisallowed:
+                "Datum darf nicht in der Vergangenheit liegen.",
+              pleaseWait: "Bitte warten Sie...",
+              required: "Dies ist ein Pflichtfeld.",
+              requireEveryCell: "Jede Zelle ist erforderlich.",
+              requireEveryRow: "Jede Zeile ist erforderlich.",
+              requireOne: "Mindestens ein Feld ist erforderlich.",
+              restrictedDomain: "This domain is not allowed",
+              selectionSoldOut: "Auswahl ausverkauft",
+              slotUnavailable:
+                "{time} am {date} ist nicht mehr verfügbar. Bitte wählen Sie einen anderen Termin.",
+              soldOut: "Ausverkauft",
+              subProductItemsLeft: "({count} verbleibende Artikel)",
+              uploadExtensions:
+                "Sie k&amp;ouml;nnen nur folgende Dateien hochladen:",
+              uploadFilesize: "Die Dateigröße kann nicht größer sein als:",
+              uploadFilesizemin: "Die Dateigröße darf nicht tiefer sein als:",
+              url: "Dieses Feld muss eine gültige URL enthalten.",
+              validateEmail: "Sie müssen diese E-Mail bestätigen",
+              wordLimitError: "Zu viele Worte. Das Maximum beträgt",
+              wordMinLimitError: "Zu wenige Worte. Das Minimum beträgt",
+            });
+            /*INIT-END*/
+          });
+
+          JotForm.prepareCalculationsOnTheFly([
+            null,
+            null,
+            {
+              name: "submit2",
+              qid: "2",
+              text: "Absenden",
+              type: "control_button",
+            },
+            {
+              description: "",
+              name: "additionalComments",
+              qid: "3",
+              subLabel: "",
+              text: "Additional comments",
+              type: "control_textarea",
+            },
+          ]);
+          setTimeout(function () {
+            JotForm.paymentExtrasOnTheFly([
+              null,
+              null,
+              {
+                name: "submit2",
+                qid: "2",
+                text: "Absenden",
+                type: "control_button",
+              },
+              {
+                description: "",
+                name: "additionalComments",
+                qid: "3",
+                subLabel: "",
+                text: "Additional comments",
+                type: "control_textarea",
+              },
+            ]);
+          }, 20);
+        </script>
+        <style type="text/css">
+          @media print {
+            .form-section {
+              display: inline !important;
+            }
+            .form-pagebreak {
+              display: none !important;
+            }
+            .form-section-closed {
+              height: auto !important;
+            }
+            .page-section {
+              position: initial !important;
+            }
+          }
+        </style>
+        <link
+          type="text/css"
+          rel="stylesheet"
+          href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.39643"
+        />
+        <link
+          type="text/css"
+          rel="stylesheet"
+          href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.39643"
+        />
+        <link
+          type="text/css"
+          rel="stylesheet"
+          href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.39643"
+        />
+        <style type="text/css" id="form-designer-style">
+          /* Injected CSS Code */
+          @font-face {
+            font-family: "LabGrotesque";
+            src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+                format("woff2"),
+              url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+                format("woff");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+          }
+          @font-face {
+            font-family: "TiemposTextWeb-Regular";
+            src: url("https://acc.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
+              format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+          }
+          .supernova,
+          body {
+            background-color: transparent !important;
+          }
+
+          body {
+            text-decoration: none;
+            margin: 0;
+          }
+
+          .form-label {
+            font-family: LabGrotesque Black, Helvetica, sans-serif;
+            font-size: 22px;
+            color: #111516;
+            margin-left: 0;
+            font-weight: bold;
+          }
+          .form-checkbox + label,
+          .form-checkbox + span,
+          .form-radio + label,
+          .form-radio + span {
+            font-family: TiemposTextWeb-Regular, Georgia, Times, serif;
+            color: #111516 !important;
+            font-size: 20px;
+          }
+
+          .supernova .form-all,
+          .form-all {
+            box-shadow: none !important;
+            border: none !important;
+          }
+
+          form {
+            width: 100%;
+            height: 100%;
+          }
+
+          form,
+          .form-all,
+          ul.page-section li:first-child {
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          .form-all {
+            max-width: none;
+          }
+
+          ul.page-section {
+            padding: 0px;
+          }
+          .form-buttons-wrapper {
+            display: block;
+            border: none;
+            padding-bottom: 0;
+            padding-left: 0;
+            width: 100%;
+            margin: 0;
+            margin-bottom: 16px;
+          }
+
+          .form-buttons-wrapper button {
+            margin-left: 0 !important;
+            background-color: #096ffa;
+            font-family: LabGrotesque Black, Helvetica, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2.58px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            padding: 2px 16px;
+          }
+
+          .form-buttons-wrapper button:hover {
+            background-color: #096ffa;
+          }
+
+          .submit-button {
+            font-weight: bold;
+            margin: auto;
+            text-align: center;
+          }
+
+          @media screen and (max-width: 782px) {
+            .form-label {
+              font-size: 16px;
             }
 
-            // Change the id here, keep the i on front
-            i230542751600042.frame.style.minHeight = "0px";
-          };
-          if (window.addEventListener) {
-            window.addEventListener("message", this.customHeightSetBP, false);
-          } else if (window.attachEvent) {
-            window.attachEvent("onmessage", this.customHeightSetBP);
+            .form-checkbox + label,
+            .form-checkbox + span,
+            .form-radio + label,
+            .form-radio + span {
+              font-size: 17.5px;
+            }
           }
+
+          /* Handle stars for mobile */
+          @media screen and (max-width: 625px) {
+            .form-star-rating,
+            li[data-type="control_rating"] > .form-input-wide {
+              flex-wrap: nowrap;
+              justify-content: space-between;
+              gap: 5px;
+            }
+            .form-star-rating .form-star-rating-star:not(:last-child) {
+              margin-right: 0;
+            }
+          }
+
+          /* Injected CSS Code */
+        </style>
+
+        <form
+          class="jotform-form"
+          action="https://submit.jotformeu.com/submit/230542751600042"
+          method="post"
+          name="form_230542751600042"
+          id="230542751600042"
+          accept-charset="utf-8"
+          autocomplete="on"
+        >
+          <input type="hidden" name="formID" value="230542751600042" /><input
+            type="hidden"
+            id="JWTContainer"
+            value=""
+          /><input type="hidden" id="cardinalOrderNumber" value="" />
+          <div role="main" class="form-all">
+            <style>
+              .form-all:before {
+                background: none;
+              }
+            </style>
+            <ul class="form-section page-section">
+              <li class="form-line" data-type="control_textarea" id="id_3">
+                <label
+                  class="form-label form-label-top form-label-auto"
+                  id="label_3"
+                  for="input_3"
+                >
+                  Additional comments
+                </label>
+                <div id="cid_3" class="form-input-wide" data-layout="full">
+                  <textarea
+                    id="input_3"
+                    class="form-textarea"
+                    name="q3_additionalComments"
+                    style="width: 648px; height: 163px"
+                    data-component="textarea"
+                    aria-labelledby="label_3"
+                  ></textarea>
+                </div>
+              </li>
+              <li class="form-line" data-type="control_button" id="id_2">
+                <div id="cid_2" class="form-input-wide" data-layout="full">
+                  <div
+                    data-align="auto"
+                    class="form-buttons-wrapper form-buttons-auto jsTest-button-wrapperField"
+                  >
+                    <button
+                      id="input_2"
+                      type="submit"
+                      class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+                      data-component="button"
+                      data-content=""
+                    >
+                      Absenden
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li style="display: none">
+                Should be Empty: <input type="text" name="website" value="" />
+              </li>
+            </ul>
+          </div>
+          <script>
+            JotForm.showJotFormPowered = "0";
+          </script>
+          <script>
+            JotForm.poweredByText = "Powered by Jotform";
+          </script>
+          <input
+            type="hidden"
+            class="simple_spc"
+            id="simple_spc"
+            name="simple_spc"
+            value="230542751600042"
+          />
+          <script type="text/javascript">
+            var all_spc = document.querySelectorAll(
+              "form[id='230542751600042'] .si" + "mple" + "_spc"
+            );
+            for (var i = 0; i < all_spc.length; i++) {
+              all_spc[i].value = "230542751600042-230542751600042";
+            }
+          </script>
+        </form>
+        <!-- Custom stuff for thank you page -->
+        <iframe name="dummy-frame" style="display: none"></iframe>
+        <script>
+          // Form id hier kopieren
+          (() => {
+            const form = document.getElementById("230542751600042");
+            form.target = "dummy-frame";
+            form.addEventListener("submit", () => {
+              const thanks = document.createElement("p");
+              thanks.innerText = "Danke!";
+
+              form.parentNode.insertBefore(thanks, form.nextSibling);
+              form.parentNode.removeChild(form);
+            });
+          })();
         </script>
+
+        <!-- Comments form: end -->
       </div>
     </div>
     <!-- Custom script -->
@@ -283,7 +671,9 @@
       const likeBtn = document.getElementById("likebtn");
       const dislikeBtn = document.getElementById("dislikebtn");
       const commentBox = document.getElementById("commentary");
-      const forms = document.querySelectorAll(".updown form");
+      const formLike = document.getElementById("230542012648044");
+      const formDislike = document.getElementById("230542365970053");
+      const forms = [formLike, formDislike];
       const btns = [likeBtn, dislikeBtn];
 
       function jotFormClickedUpDown(e) {
@@ -315,8 +705,6 @@
     <script type="text/javascript">
       JotForm.forwardToEu = true;
     </script>
-    <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.39635"></script>
-    <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.39635"></script>
 
     <!-- Copy: end here  -->
   </body>
