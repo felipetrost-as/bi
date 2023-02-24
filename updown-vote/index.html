@@ -42,6 +42,7 @@
       .updown * {
         margin: 0;
         padding: 0;
+        height: ;
         box-sizing: border-box;
       }
       .updown {
@@ -53,6 +54,11 @@
         background-color: transparent;
         border: none;
         outline: none;
+        background-image: none !important;
+      }
+      .updown button:active {
+        background-color: transparent !important;
+        box-shadow: none !important;
       }
       .updown button:disabled path {
         fill: #e8e9ea !important;
@@ -273,10 +279,11 @@
       </div>
     </div>
     <!-- Custom script -->
-    <script type="text/javascript" defer>
+    <script type="text/javascript">
       const likeBtn = document.getElementById("likebtn");
       const dislikeBtn = document.getElementById("dislikebtn");
       const commentBox = document.getElementById("commentary");
+      const forms = document.querySelectorAll(".updown form");
       const btns = [likeBtn, dislikeBtn];
 
       function jotFormClickedUpDown(e) {
@@ -290,6 +297,13 @@
         target.classList.add("selected");
         other.disabled = true;
         commentBox.classList.add("opened");
+        setTimeout(() => {
+          forms.forEach((f) =>
+            f.addEventListener("submit", (e) => {
+              e.preventDefault();
+            })
+          );
+        }, 100);
       }
 
       likeBtn.addEventListener("click", jotFormClickedUpDown);
