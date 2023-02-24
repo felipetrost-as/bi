@@ -1,0 +1,27 @@
+<!-- 
+  URLs from jot form have this format:
+https://form.jotform.com/jsform/<id>
+  you have to paste the id where the comments in the code show you
+ -->
+<script
+  type="text/javascript"
+  src="https://form.jotform.com/jsform/230304339060040"
+></script>
+<script type="text/javascript">
+  this.customHeightSetBP = function (e) {
+    if (!e.data || !e.data.split) return;
+    var args = e.data.split(":");
+    // Change the id here
+    if (args[2] != "230304339060040") {
+      return;
+    }
+
+    // Change the id here, keep the i on front
+    i230304339060040.frame.style.minHeight = "0px";
+  };
+  if (window.addEventListener) {
+    window.addEventListener("message", this.customHeightSetBP, false);
+  } else if (window.attachEvent) {
+    window.attachEvent("onmessage", this.customHeightSetBP);
+  }
+</script>
