@@ -685,9 +685,7 @@
           let notSelected;
 
           function jotFormClickedUpDown(e) {
-            const target = btns.includes(e.target)
-              ? e.target
-              : e.target.parentElement;
+            const target = likeBtn.contains(e.target) ? likeBtn : dislikeBtn;
             const other = target === likeBtn ? dislikeBtn : likeBtn;
 
             if (target === likeBtn) likeRadio.checked = true;
