@@ -683,8 +683,11 @@
 
           const btns = [likeBtn, dislikeBtn];
           let notSelected;
+          let likeSubmitted = false;
 
           function jotFormClickedUpDown(e) {
+            if (likeSubmitted) return;
+            likeSubmitted = true;
             const target = likeBtn.contains(e.target) ? likeBtn : dislikeBtn;
             const other = target === likeBtn ? dislikeBtn : likeBtn;
 
