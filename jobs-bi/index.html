@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Copy: start -->
+    <style>
+      @font-face {
+        font-family: "ubuntu";
+        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/ubuntu-v15-latin-700.woff2")
+          format("woff2");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "LabGrotesque-Black";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+            format("woff");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "LabGrotesque";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+            format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .job-wrapper * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .job-wrapper > p.title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-family: ubuntu;
+      }
+
+      .job-wrapper .job-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .job-wrapper .job {
+        flex-grow: 1;
+        border: 1px solid #e8e9ea;
+        padding: 16px;
+        width: 40%;
+      }
+      @media (max-width: 480px) {
+        .job-wrapper .job {
+          width: 100%;
+        }
+      }
+      .job-wrapper .job .job-title {
+        display: block;
+        text-decoration: none;
+        margin-bottom: 15px;
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        color: #096ffa;
+        /* color:#203F5A; */
+      }
+      .job-wrapper .job .job-title:hover {
+        text-decoration: underline;
+      }
+      .job-wrapper .job .job-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 20px;
+        font-family: LabGrotesque;
+        color: #000;
+      }
+      .job-wrapper .job .job-content img {
+        width: 58px;
+        height: 58px;
+        border: 1px solid #cecece;
+      }
+
+      .job-wrapper .job .job-content .location {
+        color: #757575;
+      }
+
+      .job-wrapper > a.more-jobs {
+        display: inline-block;
+        font-family: LabGrotesque-Black;
+        color: #000;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid #000;
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-weight: lighter;
+        transition: 0.3s ease all;
+      }
+      .job-wrapper > a.more-jobs:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+    <section class="job-wrapper">
+      <p class="title">Finde deinen nächsten Startup-Job</p>
+      <div class="job-container">
+        <!-- Jobs: start -->
+        <div class="job">
+          <a href="joblink" class="job-title">
+            DevOps / IT Operations Engineer (w/m/d) Container Platform
+          </a>
+          <div class="job-content">
+            <img
+              src="https://www.ebusco.com/wp-content/uploads/ING-Bank-provides-growth-capital-to-Ebusco.jpeg"
+              alt=""
+            />
+            <div class="employer">
+              <p class="name">Firma 1</p>
+              <p class="location">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  width="384"
+                  height="512"
+                  style="
+                    height: 12px;
+                    width: auto;
+                    min-width: 12px;
+                    min-height: 12px;
+                    fill: currentColor;
+                    margin-bottom: -1px;
+                    margin-right: 0.25rem;
+                  "
+                >
+                  <path
+                    d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"
+                  ></path>
+                </svg>
+                Recklilnghausen
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="job">
+          <a href="joblink" class="job-title">
+            DevOps / IT Operations Engineer (w/m/d) Container Platform
+          </a>
+          <div class="job-content">
+            <img
+              src="https://www.ebusco.com/wp-content/uploads/ING-Bank-provides-growth-capital-to-Ebusco.jpeg"
+              alt=""
+            />
+            <div class="employer">
+              <p class="name">Firma 1</p>
+              <p class="location">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  width="384"
+                  height="512"
+                  style="
+                    height: 12px;
+                    width: auto;
+                    min-width: 12px;
+                    min-height: 12px;
+                    fill: currentColor;
+                    margin-bottom: -1px;
+                    margin-right: 0.25rem;
+                  "
+                >
+                  <path
+                    d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"
+                  ></path>
+                </svg>
+                Recklilnghausen
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="job">
+          <a href="joblink" class="job-title">
+            DevOps / IT Operations Engineer (w/m/d) Container Platform
+          </a>
+          <div class="job-content">
+            <img
+              src="https://www.ebusco.com/wp-content/uploads/ING-Bank-provides-growth-capital-to-Ebusco.jpeg"
+              alt=""
+            />
+            <div class="employer">
+              <p class="name">Firma 1</p>
+              <p class="location">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  width="384"
+                  height="512"
+                  style="
+                    height: 12px;
+                    width: auto;
+                    min-width: 12px;
+                    min-height: 12px;
+                    fill: currentColor;
+                    margin-bottom: -1px;
+                    margin-right: 0.25rem;
+                  "
+                >
+                  <path
+                    d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"
+                  ></path>
+                </svg>
+                Recklilnghausen
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="job">
+          <a href="joblink" class="job-title">
+            DevOps / IT Operations Engineer (w/m/d) Container Platform
+          </a>
+          <div class="job-content">
+            <img
+              src="https://www.ebusco.com/wp-content/uploads/ING-Bank-provides-growth-capital-to-Ebusco.jpeg"
+              alt=""
+            />
+            <div class="employer">
+              <p class="name">Firma 1</p>
+              <p class="location">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  width="384"
+                  height="512"
+                  style="
+                    height: 12px;
+                    width: auto;
+                    min-width: 12px;
+                    min-height: 12px;
+                    fill: currentColor;
+                    margin-bottom: -1px;
+                    margin-right: 0.25rem;
+                  "
+                >
+                  <path
+                    d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"
+                  ></path>
+                </svg>
+                Recklilnghausen
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Jobs: end -->
+      </div>
+      <a
+        href="https://jobs-gruenderszene.businessinsider.de/"
+        class="more-jobs"
+        target="_blank"
+        >Alle Jobs anzeigen</a
+      >
+    </section>
+    <!-- Copy: end -->
+  </body>
+</html>
