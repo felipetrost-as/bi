@@ -10,7 +10,15 @@
     <!-- Copy: start here  -->
     <style>
       @font-face {
-        font-family: "LabGrotesque";
+        font-family: "Custom-LabGrotesque-Black";
+        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/LabGrotesque-Black.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Custom-LabGrotesque";
         src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
             format("woff2"),
           url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
@@ -20,7 +28,7 @@
         font-display: swap;
       }
       @font-face {
-        font-family: "TiemposTextWeb-Regular";
+        font-family: "Custom-TiemposTextWeb-Regular";
         src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
           format("woff2");
         font-weight: 400;
@@ -73,7 +81,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
-        gap: 70px;
+        gap: 100px;
       }
 
       .updown .like-buttons input,
@@ -89,7 +97,7 @@
       }
 
       .updown .title {
-        font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif;
+        font-family: Custom-LabGrotesque-Black, Helvetica, Arial, sans-serif;
         text-transform: uppercase;
         color: #111111;
         font-size: 18px;
@@ -110,6 +118,14 @@
       .updown #commentary.opened {
         max-height: 100vh;
       }
+      /* jotform style copy */
+      .form-label-top {
+        margin-bottom: 14px;
+      }
+
+      .form-textarea {
+        padding: 0.625em;
+      }
       /* jotform style fighting */
       .jf-form-buttons:not(.form-pagebreak-back),
       form input[type="checkbox"] + label,
@@ -118,8 +134,8 @@
       .form-checkbox + span,
       .form-radio + label,
       .form-radio + span {
-        margin: 0 !important;
-        padding: 0 !important;
+        margin: 0;
+        padding: 0;
       }
     </style>
     <iframe name="like" id="submit-dummy"></iframe>
@@ -128,7 +144,7 @@
       <p class="title">Wie hat euch die Übersetzung gefallen?</p>
       <div class="like-buttons">
         <form
-          class="jotform-form"
+          class="jotform-form like-buttons"
           action="https://submit.jotformeu.com/submit/230542012648044"
           method="post"
           name="form_230542012648044"
@@ -269,44 +285,12 @@
             }
           }
         </style>
-        <link
-          type="text/css"
-          rel="stylesheet"
-          href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.39643"
-        />
-        <link
-          type="text/css"
-          rel="stylesheet"
-          href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.39643"
-        />
-        <link
-          type="text/css"
-          rel="stylesheet"
-          href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.39643"
-        />
         <style type="text/css" id="form-designer-style">
           /* Injected CSS Code */
-          @font-face {
-            font-family: "LabGrotesque";
-            src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
-                format("woff2"),
-              url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
-                format("woff");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: "TiemposTextWeb-Regular";
-            src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
-              format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
           .supernova,
           body {
             background-color: transparent !important;
+            font-family: inherit;
           }
 
           body {
@@ -315,7 +299,7 @@
           }
 
           .form-label {
-            font-family: LabGrotesque Black, Helvetica, sans-serif;
+            font-family: Custom-LabGrotesque Black, Helvetica, sans-serif;
             font-size: 22px;
             color: #111516;
             margin-left: 0;
@@ -325,7 +309,7 @@
           .form-checkbox + span,
           .form-radio + label,
           .form-radio + span {
-            font-family: TiemposTextWeb-Regular, Georgia, Times, serif;
+            font-family: Custom-TiemposTextWeb-Regular, Georgia, Times, serif;
             color: #111516 !important;
             font-size: 20px;
           }
@@ -370,12 +354,16 @@
             background-color: #096ffa !important;
             border: none !important;
             background-image: none !important;
-            font-family: LabGrotesque Black, Helvetica, sans-serif;
+            font-family: Custom-LabGrotesque Black, Helvetica, sans-serif;
             font-size: 12px;
             letter-spacing: 2.58px;
             text-transform: uppercase;
             border-radius: 25px;
-            padding: 2px 16px;
+            padding: 2px 16px !important;
+            margin-top: 30px !important;
+            width: auto;
+            min-width: 180px;
+            height: 3em;
           }
 
           .form-buttons-wrapper button:hover {

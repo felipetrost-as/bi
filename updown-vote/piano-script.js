@@ -2,7 +2,15 @@ const container = document.querySelector(".piano-html--below-article");
 container.innerHTML = `
     <style>
       @font-face {
-        font-family: "LabGrotesque";
+        font-family: "Custom-LabGrotesque-Black";
+        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/LabGrotesque-Black.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Custom-LabGrotesque";
         src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
             format("woff2"),
           url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
@@ -12,8 +20,8 @@ container.innerHTML = `
         font-display: swap;
       }
       @font-face {
-        font-family: "TiemposTextWeb-Regular";
-        src: url("https://acc.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
+        font-family: "Custom-TiemposTextWeb-Regular";
+        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
           format("woff2");
         font-weight: 400;
         font-style: normal;
@@ -65,7 +73,7 @@ container.innerHTML = `
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
-        gap: 70px;
+        gap: 100px;
       }
 
       .updown .like-buttons input,
@@ -81,7 +89,7 @@ container.innerHTML = `
       }
 
       .updown .title {
-        font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif;
+        font-family: Custom-LabGrotesque-Black, Helvetica, Arial, sans-serif;
         text-transform: uppercase;
         color: #111111;
         font-size: 18px;
@@ -102,6 +110,25 @@ container.innerHTML = `
       .updown #commentary.opened {
         max-height: 100vh;
       }
+      /* jotform style copy */
+      .form-label-top {
+        margin-bottom: 14px;
+      }
+
+      .form-textarea {
+        padding: 0.625em;
+      }
+      /* jotform style fighting */
+      .jf-form-buttons:not(.form-pagebreak-back),
+      form input[type="checkbox"] + label,
+      form input[type="radio"] + label,
+      .form-checkbox + label,
+      .form-checkbox + span,
+      .form-radio + label,
+      .form-radio + span {
+        margin: 0;
+        padding: 0;
+      }
     </style>
     <iframe name="like" id="submit-dummy"></iframe>
 
@@ -109,7 +136,7 @@ container.innerHTML = `
       <p class="title">Wie hat euch die Übersetzung gefallen?</p>
       <div class="like-buttons">
         <form
-          class="jotform-form"
+          class="jotform-form like-buttons"
           action="https://submit.jotformeu.com/submit/230542012648044"
           method="post"
           name="form_230542012648044"
@@ -250,41 +277,8 @@ container.innerHTML = `
             }
           }
         </style>
-        <link
-          type="text/css"
-          rel="stylesheet"
-          href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.39643"
-        />
-        <link
-          type="text/css"
-          rel="stylesheet"
-          href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.39643"
-        />
-        <link
-          type="text/css"
-          rel="stylesheet"
-          href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.39643"
-        />
         <style type="text/css" id="form-designer-style">
           /* Injected CSS Code */
-          @font-face {
-            font-family: "LabGrotesque";
-            src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
-                format("woff2"),
-              url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
-                format("woff");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: "TiemposTextWeb-Regular";
-            src: url("https://acc.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
-              format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
           .supernova,
           body {
             background-color: transparent !important;
@@ -296,7 +290,7 @@ container.innerHTML = `
           }
 
           .form-label {
-            font-family: LabGrotesque Black, Helvetica, sans-serif;
+            font-family: Custom-LabGrotesque Black, Helvetica, sans-serif;
             font-size: 22px;
             color: #111516;
             margin-left: 0;
@@ -306,7 +300,7 @@ container.innerHTML = `
           .form-checkbox + span,
           .form-radio + label,
           .form-radio + span {
-            font-family: TiemposTextWeb-Regular, Georgia, Times, serif;
+            font-family: Custom-TiemposTextWeb-Regular, Georgia, Times, serif;
             color: #111516 !important;
             font-size: 20px;
           }
@@ -351,12 +345,16 @@ container.innerHTML = `
             background-color: #096ffa !important;
             border: none !important;
             background-image: none !important;
-            font-family: LabGrotesque Black, Helvetica, sans-serif;
+            font-family: Custom-LabGrotesque Black, Helvetica, sans-serif;
             font-size: 12px;
             letter-spacing: 2.58px;
             text-transform: uppercase;
             border-radius: 25px;
-            padding: 2px 16px;
+            padding: 2px 16px !important;
+            margin-top: 30px !important;
+            width: auto;
+            min-width: 180px;
+            height: 3em;
           }
 
           .form-buttons-wrapper button:hover {
@@ -451,7 +449,7 @@ container.innerHTML = `
                   id="label_3"
                   for="input_3"
                 >
-                    Hier könnt ihr eure Meinung weiter ausführen:
+                  Hier könnt ihr eure Meinung weiter ausführen:
                 </label>
                 <div id="cid_3" class="form-input-wide" data-layout="full">
                   <textarea
@@ -500,6 +498,14 @@ container.innerHTML = `
             name="simple_spc"
             value="230542751600042"
           />
+          <script type="text/javascript">
+            var all_spc = document.querySelectorAll(
+              "form[id='230542751600042'] .si" + "mple" + "_spc"
+            );
+            for (var i = 0; i < all_spc.length; i++) {
+              all_spc[i].value = "230542751600042-230542751600042";
+            }
+          </script>
         </form>
         <!-- Custom stuff for thank you page -->
         <iframe name="dummy-frame" style="display: none"></iframe>
@@ -570,7 +576,6 @@ container.innerHTML = `
     <script type="text/javascript">
       JotForm.forwardToEu = true;
     </script>
-
 `;
 // Timeout to wait until elements are loaded into te DOM
 setTimeout(() => {
