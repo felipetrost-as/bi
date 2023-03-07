@@ -21,7 +21,7 @@
       }
       @font-face {
         font-family: "TiemposTextWeb-Regular";
-        src: url("https://acc.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
+        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
           format("woff2");
         font-weight: 400;
         font-style: normal;
@@ -109,6 +109,17 @@
       }
       .updown #commentary.opened {
         max-height: 100vh;
+      }
+      /* jotform style fighting */
+      .jf-form-buttons:not(.form-pagebreak-back),
+      form input[type="checkbox"] + label,
+      form input[type="radio"] + label,
+      .form-checkbox + label,
+      .form-checkbox + span,
+      .form-radio + label,
+      .form-radio + span {
+        margin: 0 !important;
+        padding: 0 !important;
       }
     </style>
     <iframe name="like" id="submit-dummy"></iframe>
@@ -287,7 +298,7 @@
           }
           @font-face {
             font-family: "TiemposTextWeb-Regular";
-            src: url("https://acc.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
+            src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
               format("woff2");
             font-weight: 400;
             font-style: normal;
