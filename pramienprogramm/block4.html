@@ -1,0 +1,82 @@
+<style>
+  .blue_wrapper_small * {
+    margin: 0;
+    padding: 0;
+  }
+  .blue_wrapper_small {
+    background-color: #096ffa;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .blue_wrapper_small .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 100%;
+    padding: 60px;
+    gap: 30px;
+  }
+
+  .blue_wrapper_small .container h3 {
+    font-size: 30px;
+    font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif !important;
+    margin-bottom: 10px;
+  }
+
+  .blue_wrapper_small .container img {
+    max-width: 250px;
+  }
+
+  .blue_wrapper_small .container .text li {
+    font-size: 18px;
+  }
+
+  .blue_wrapper_small .container .text *,
+  .blue_wrapper_small .container .text li::before {
+    color: white !important;
+  }
+  @media only screen and (min-width: 768px) {
+    .blue_wrapper_small .container {
+      width: 802px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .blue_wrapper_small .container {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+    .blue_wrapper_small .container img {
+      display: none;
+    }
+    .blue_wrapper_small .container h3 {
+      font-size: 25px;
+    }
+  }
+</style>
+<div class="blue_wrapper_small">
+  <div class="container">
+    <img
+      src="https://cdn.businessinsider.de/wp-content/uploads/2021/06/202106_BI_Plus_iPhone_Mockup@2x.png"
+    />
+    <div class="text regularText">
+      <h3>Und so funktioniert es:</h3>
+      <ol>
+        <li>
+          Verschicke deinen persönlichen Empfehlungslink an jemanden. Deinen
+          Link findest du in deinem Prämiencenter
+        </li>
+        <li>Für jede erfolgreiche Empfehlung erhältst du Prämienpunkte.</li>
+        <li>
+          Entsprechend deiner Punktzahl kannst du deine gewünschte Prämie
+          auswählen. Deine ausgewählte Prämie erhältst du sofort per E-Mail von
+          uns.
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
