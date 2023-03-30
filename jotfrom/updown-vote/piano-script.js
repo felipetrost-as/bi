@@ -1,32 +1,6 @@
 const container = document.querySelector(".piano-html--below-article");
 container.innerHTML = `
     <style>
-      @font-face {
-        font-family: "Custom-LabGrotesque-Black";
-        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/LabGrotesque-Black.woff2")
-          format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "Custom-LabGrotesque";
-        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
-            format("woff2"),
-          url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
-            format("woff");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "Custom-TiemposTextWeb-Regular";
-        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
-          format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
       #submit-dummy {
         display: none;
       }
@@ -39,9 +13,12 @@ container.innerHTML = `
         border-top: 1px solid #757575;
         border-bottom: 1px solid #757575;
         padding: 30px 0;
+        margin-top: 40px;
+        margin-bottom: 20px;
       }
       .updown form {
         width: fit-content;
+        max-width: 100%;
       }
       .updown button.thumb {
         display: block;
@@ -89,14 +66,14 @@ container.innerHTML = `
       }
 
       .updown .title {
-        font-family: Custom-LabGrotesque-Black, Helvetica, Arial, sans-serif;
+        font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif;
         text-transform: uppercase;
         color: #111111;
         font-size: 18px;
         letter-spacing: 2.08px;
         margin-bottom: var(--margin-bottom);
         padding-bottom: var(--padding-bottom);
-        font-weight: bold;
+        font-weight: normal;
         text-align: center;
         margin-bottom: 30px;
       }
@@ -117,6 +94,7 @@ container.innerHTML = `
 
       .form-textarea {
         padding: 0.625em;
+        max-width: 100%;
       }
       /* jotform style fighting */
       .jf-form-buttons:not(.form-pagebreak-back),
@@ -279,18 +257,8 @@ container.innerHTML = `
         </style>
         <style type="text/css" id="form-designer-style">
           /* Injected CSS Code */
-          .supernova,
-          body {
-            background-color: transparent !important;
-          }
-
-          body {
-            text-decoration: none;
-            margin: 0;
-          }
-
           .form-label {
-            font-family: Custom-LabGrotesque Black, Helvetica, sans-serif;
+            font-family: LabGrotesque Black, Helvetica, sans-serif;
             font-size: 22px;
             color: #111516;
             margin-left: 0;
@@ -300,7 +268,7 @@ container.innerHTML = `
           .form-checkbox + span,
           .form-radio + label,
           .form-radio + span {
-            font-family: Custom-TiemposTextWeb-Regular, Georgia, Times, serif;
+            font-family: TiemposTextWeb-Regular, Georgia, Times, serif;
             color: #111516 !important;
             font-size: 20px;
           }
@@ -345,7 +313,7 @@ container.innerHTML = `
             background-color: #096ffa !important;
             border: none !important;
             background-image: none !important;
-            font-family: Custom-LabGrotesque Black, Helvetica, sans-serif;
+            font-family: LabGrotesque Black, Helvetica, sans-serif;
             font-size: 12px;
             letter-spacing: 2.58px;
             text-transform: uppercase;
@@ -500,7 +468,7 @@ container.innerHTML = `
           />
           <script type="text/javascript">
             var all_spc = document.querySelectorAll(
-              "form[id='230542751600042'] .si" + "mple" + "_spc"
+              "form[id="230542751600042"] .si" + "mple" + "_spc"
             );
             for (var i = 0; i < all_spc.length; i++) {
               all_spc[i].value = "230542751600042-230542751600042";
@@ -519,7 +487,10 @@ container.innerHTML = `
           const commentInfo = document.getElementById("input_6_comments");
           document.getElementById("input_7_comments").value =
             window.location.href;
-          document.getElementById("input_4_url").value = window.location.href;
+          document.getElementById("input_4_url").value =
+            window.location != window.parent.location
+              ? document.referrer
+              : document.location.href;
 
           const btns = [likeBtn, dislikeBtn];
           let notSelected;
