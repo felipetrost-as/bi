@@ -35,6 +35,23 @@
     font-size: 18px;
   }
 
+  .blue_wrapper_small .container .text li::before {
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  .blue_wrapper_small .container .text ol > li:before {
+    color: white;
+    content: counter(my-counter) ".";
+    counter-increment: my-counter;
+    font-weight: 500;
+    left: 0;
+    line-height: 1.5;
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+  }
+
   .blue_wrapper_small .container .text *,
   .blue_wrapper_small .container .text li::before {
     color: white !important;
