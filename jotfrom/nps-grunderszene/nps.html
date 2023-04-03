@@ -1,100 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- copy: start  -->
-    <style>
-      .jpopup-container {
-        position: fixed;
-        background-color: rgba(0, 0, 0, 0.5);
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 99999999;
-        animation: fadein 0.2s ease;
-      }
-      .jpopup-content {
-        width: 800px;
-        max-width: 90%;
-        padding: 15px;
-        background-color: white;
-        border-radius: 15px;
-        position: relative;
-      }
-      .jpopup-content button.close {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        border: none;
-        background-color: #eee;
-        border-radius: 100%;
-        height: 35px;
-        width: 35px;
-        font-size: 16px;
-        overflow: hidden;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      #jpopup-open {
-        transform-origin: top left;
-        transform: rotate(-90deg);
-        position: fixed;
-        display: block;
-        left: 0;
-        bottom: 20px;
-        z-index: 1;
-        border: none;
-        padding: 0;
-        background-color: #096ffa;
-        border-radius: 0px 0px 5px 5px !important;
-        overflow: hidden;
-      }
-      #jpopup-open p {
-        margin: 0;
-        /* white-space: pre-line;
-        -webkit-writing-mode: vertical-rl;
-        writing-mode: vertical-rl;
-        letter-spacing: 3px; */
-        background-color: #096ffa;
-        color: #fff;
-        padding: 10px;
-        font-family: LabGrotesque-Black, helvetica, sans-serif;
-      }
-      @keyframes fadein {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-      /* @keyframes fadeout {
-        0% { opacity: 1 }
-        100% { opacity: 0}
-    } */
-    </style>
-    <div class="jpopup-container">
-      <div class="jpopup-content">
-        <button class="close">
-          <span> &#x2715; </span>
-        </button>
-        <!-- form: start -->
-        <iframe
-          class="jotform-container-frame"
-          onload="resizeIframe(this)"
-          id="iframe-230244082001033-popup"
-          srcdoc='
+<iframe
+  class="jotform-container-frame"
+  onload="resizeIframe(this)"
+  id="iframe-230922662701350"
+  srcdoc='
 <script
   src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.40242"
   type="text/javascript"
@@ -428,37 +336,37 @@
     font-size: 16px;
     font-weight: normal;
     font-family: "Inter", sans-serif;
-    border-color: #096ffa;
+    border-color: #203f5a;
   }
   .submit-button {
     min-width: 180px;
   }
   li[data-type="control_button"] .form-submit-button {
     color: #ffffff;
-    background-color: #096ffa;
+    background-color: #203f5a;
     background-image: none;
     box-shadow: none;
     text-shadow: none;
   }
   li[data-type="control_button"] .form-submit-button:hover {
-    background-color: #03439a;
+    background-color: #02213c;
   }
   li[data-type="control_button"] button.jf-form-buttons.form-sacl-button,
   li[data-type="control_button"] button.jf-form-buttons.form-submit-print {
-    color: #096ffa;
-    border-color: #096ffa;
+    color: #203f5a;
+    border-color: #203f5a;
     background-image: none;
     background-color: #fff;
   }
   li[data-type="control_button"] button.jf-form-buttons.form-sacl-button:hover,
   li[data-type="control_button"]
     button.jf-form-buttons.form-submit-print:hover {
-    background-color: #03439a;
+    background-color: #02213c;
     color: #fff;
   }
   li[data-type="control_button"] button.jf-form-buttons.form-pagebreak-back {
     background-image: none;
-    background-color: #03439a;
+    background-color: #02213c;
     box-shadow: none;
     text-shadow: none;
   }
@@ -733,13 +641,14 @@
 
   .form-buttons-wrapper button {
     margin-left: 0 !important;
-    background-color: #096ffa;
+    background-color: #203f5a;
     font-family: LabGrotesque Black, Helvetica, sans-serif;
     font-size: 12px;
     letter-spacing: 2.58px;
     text-transform: uppercase;
     border-radius: 25px;
     padding: 2px 16px;
+    transition: all .2s ease;
   }
 
   .submit-button {
@@ -778,14 +687,14 @@
 
 <form
   class="jotform-form"
-  action="https://eu-submit.jotform.com/submit/230244082001033"
+  action="https://eu-submit.jotform.com/submit/230922662701350"
   method="post"
-  name="form_230244082001033"
-  id="230244082001033"
+  name="form_230922662701350"
+  id="230922662701350"
   accept-charset="utf-8"
   autocomplete="on"
 >
-  <input type="hidden" name="formID" value="230244082001033" /><input
+  <input type="hidden" name="formID" value="230922662701350" /><input
     type="hidden"
     id="JWTContainer"
     value=""
@@ -860,12 +769,12 @@ Wie wahrscheinlich ist es, dass du dein Business Insider Abo einem Freund oder e
     class="simple_spc"
     id="simple_spc"
     name="simple_spc"
-    value="230244082001033"
+    value="230922662701350"
   />
   <script type="text/javascript">
-    var all_spc = document.querySelectorAll("form[id=\"230244082001033\"] .si" + "mple" + "_spc");
+    var all_spc = document.querySelectorAll("form[id=\"230922662701350\"] .si" + "mple" + "_spc");
     for (var i = 0; i < all_spc.length; i++) {
-      all_spc[i].value = "230244082001033-230244082001033";
+      all_spc[i].value = "230922662701350-230922662701350";
     }
   </script>
 </form>
@@ -931,7 +840,7 @@ ratingExp.style.width =
 (stars.getBoundingClientRect().width - window.getComputedStyle(stars.children[0]).marginRight.slice(0, -2)) + "px";
     });
 
-    const id = "230244082001033";
+    const id = "230922662701350";
     const form = document.getElementById(id);
     const formParent = form.parentNode;
     form.target = "jotform-submit-dummy";
@@ -948,102 +857,35 @@ ratingExp.style.width =
   }), 500);
 </script>
 '
-        ></iframe>
+></iframe>
 
-        <style>
-          .jotform-container-frame {
-            border: none;
-            width: 100%;
-            /* height: 100%; */
-          }
-        </style>
-        <script>
-          if (!resizeIframe) {
-            function resizeIframe(obj) {
-              const height = obj.contentWindow.document.body.scrollHeight;
-              obj.style.height = height + "px";
-            }
-          }
-          (() => {
-            const id = "230244082001033";
-            const jotformFrame = document.getElementById(`iframe-${id}-popup`);
-            console.log(jotformFrame);
+<style>
+  .jotform-container-frame {
+    border: none;
+    width: 100%;
+    /* height: 100%; */
+  }
+</style>
+<script>
+  if (!resizeIframe) {
+    function resizeIframe(obj) {
+      const height = obj.contentWindow.document.body.scrollHeight;
+      obj.style.height = height + "px";
+    }
+  }
+  (() => {
+    const id = "230922662701350";
+    const jotformFrame = document.getElementById(`iframe-${id}`);
+    console.log(jotformFrame);
 
-            window.addEventListener("resize", () => {
-              resizeIframe(jotformFrame);
-            });
+    window.addEventListener("resize", () => {
+      resizeIframe(jotformFrame);
+    });
 
-            window.addEventListener("message", (e) => {
-              if (e.data == id + "submit") {
-                resizeIframe(jotformFrame);
-              }
-            });
-          })();
-        </script>
-
-        <!-- form: end -->
-      </div>
-    </div>
-    <button id="jpopup-open"><p>Feedback</p></button>
-    <script>
-      (() => {
-        const openbutton = document.getElementById("jpopup-open");
-        const closebutton = document.querySelector(
-          ".jpopup-content button.close"
-        );
-        const popup = document.querySelector(".jpopup-container");
-        const popupcontent = document.querySelector(".jpopup-content");
-        const iframe = document.getElementById("iframe-230244082001033-popup");
-
-        function show() {
-          popup.style.display = "flex";
-          document.body.style.overflow = "hidden";
-          setTimeout(() => {
-            resizeIframe(iframe);
-          }, 2000);
-          // Totally bad, but simplest solution
-          for (let i = 1; i < 5; i++) {
-            setTimeout(() => {
-              resizeIframe(iframe);
-            }, 100 * i);
-          }
-        }
-        function hide() {
-          popup.style.display = "none";
-          document.body.style.overflow = "auto";
-        }
-
-        openbutton.addEventListener("click", show);
-        closebutton.addEventListener("click", hide);
-        window.addEventListener("keydown", (e) => {
-          if (e.keyCode === 27) {
-            hide();
-          }
-        });
-        popup.addEventListener("click", (e) => {
-          if (
-            !popupcontent.contains(e.target) &&
-            !closebutton.contains(e.target)
-          ) {
-            hide();
-          }
-        });
-
-        const id = "230244082001033";
-        window.addEventListener("message", (e) => {
-          if (e.data == "setHeight:0:" + id) {
-            for (let i = 1; i < 4; i++) {
-              setTimeout(() => {
-                resizeIframe(iframe);
-              }, 100 * i);
-            }
-          }
-          if (e.data == id + "submit") {
-            openbutton.style.display = "none";
-          }
-        });
-      })();
-    </script>
-    <!-- copy: ned -->
-  </body>
-</html>
+    window.addEventListener("message", (e) => {
+      if (e.data == id + "submit") {
+        resizeIframe(jotformFrame);
+      }
+    });
+  })();
+</script>

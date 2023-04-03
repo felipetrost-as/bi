@@ -210,6 +210,11 @@
     background-color: white!important;
   }
 
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
   *,
   *:after,
   *:before {
@@ -766,9 +771,7 @@ Wie wahrscheinlich ist es, dass du dein Business Insider Abo einem Freund oder e
     value="230244082001033"
   />
   <script type="text/javascript">
-    var all_spc = document.querySelectorAll(
-      "form[id="230244082001033"] .si" + "mple" + "_spc"
-    );
+    var all_spc = document.querySelectorAll("form[id=\"230244082001033\"] .si" + "mple" + "_spc");
     for (var i = 0; i < all_spc.length; i++) {
       all_spc[i].value = "230244082001033-230244082001033";
     }
@@ -846,7 +849,8 @@ ratingExp.style.width =
       thanks.innerText = "Vielen Dank!";
 
       form.parentNode.insertBefore(thanks, form.nextSibling);
-      form.parentNode.removeChild(form);
+      //form.parentNode.removeChild(form);
+      form.style.display = "none";
       window.parent.postMessage(id+"submit", "*")
     });
   }), 500);
