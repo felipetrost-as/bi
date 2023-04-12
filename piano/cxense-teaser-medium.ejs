@@ -1,0 +1,45 @@
+<div class="article-section__header">
+  <h2 class="article-section__title">Plus-Empfehlungen für dich</h2>
+</div>
+
+<div data-cx_zuc8 tmp:class="cx-image-on-left">
+  <!--%
+  var items = data.response.items;
+
+	const regex = /businessinsider.de\/([^/]*)\//;
+  function ressort(url){
+    return regex.exec(url)[1].toUpperCase()
+  }
+
+  for (var i = 1; i < items.length; i++) {
+    var item = items[i];
+  %-->
+  <a
+    tmp:id="{{ cX.CCE.clickTracker(item) }}"
+    tmp:href="{{ item.url }}"
+    tmp:class="cx-item"
+    tmp:target="_top"
+    tmp:title="{{ item.title }}"
+  >
+    <!--% if (item.dominantthumbnail) { %-->
+    <img
+      tmp:srcset="{{ item.dominantthumbnail }}, {{ item.dominantimage }} 2x"
+      tmp:src="{{ item.dominantthumbnail }}"
+      tmp:alt=""
+    />
+    <!--% } %-->
+    <div class="vertical gap1">
+      <div class="horizontal">
+        <div class="bi"></div>
+        <h4>{{ ressort(item.url) }}</h4>
+      </div>
+      <h3 class="teaser-post__link2">
+        {{ item.title }}
+        <!--% if (!item.dominantthumbnail && item.description) { %-->
+        <span>{{ item.description }}</span>
+        <!--% } %-->
+      </h3>
+    </div>
+  </a>
+  <!--% } %-->
+</div>
