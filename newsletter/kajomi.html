@@ -1,0 +1,60 @@
+<style>
+  div[data-type="newline"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  div[data-type="newline"] .row {
+    width: 50%;
+  }
+  div[data-type="newline"] .row:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  div[data-type="newline"] .row:last-child div.column-0 {
+    width: 63%;
+  }
+  div[data-type="newline"] .row:last-child div.column-1 {
+    width: 33%;
+  }
+  div[data-type="newline"] .row button {
+    border-radius: 25px;
+  }
+
+  span.checkbox {
+    border-radius: 5px !important;
+    border: 1px solid #cfcfcf !important;
+  }
+  .kajomi-webform input:checked + .checkbox,
+  .kajomi-webform input:checked + .radio {
+    background-color: #096ffa;
+    border: 1px solid #096ffa !important;
+  }
+  .kajomi-webform .checkbox:before {
+    border: solid #fff;
+    border-width: 0 0 3px 3px;
+  }
+
+  @media screen and (max-width: 782px) {
+    div[data-type="newline"] .row {
+      width: 100%;
+    }
+    div[data-type="newline"] .row:last-child {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    div[data-type="newline"] .row:last-child div:first-child {
+      margin-bottom: 20px;
+    }
+    div[data-type="newline"] .row:last-child div.column-0 {
+      width: 100%;
+    }
+    div[data-type="newline"] .row:last-child div.column-1 {
+      width: 90%;
+    }
+  }
+</style>

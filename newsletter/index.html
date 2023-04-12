@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Copy: start -->
+    <style type="text/css">
+      @font-face {
+        font-family: "Custom-LabGrotesque";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+            format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Custom-LabGrotesque-Black";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+            format("woff");
+        /* font-weight: bold; */
+        font-style: normal;
+        font-display: swap;
+      }
+      .newsletter-subscription {
+      }
+
+      .kajomi-webform .checkbox:before {
+        border-width: 0 0 3px 3px;
+      }
+
+      .newsletter-subscription .header img {
+        width: 63px;
+        height: auto;
+      }
+      .newsletter-subscription .header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .newsletter-subscription .header h3 {
+        font-family: Custom-LabGrotesque-Black, Helvetica, Arial, sans-serif;
+        font-size: 22px;
+      }
+
+      .newsletter-subscription .header h3.mobile {
+        display: none;
+      }
+      .newl-refer2 a {
+        color: #848f91 !important;
+        font-size: 10px;
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        text-decoration: underline #848f91;
+      }
+
+      .newl-refer2 p {
+        line-height: normal;
+        color: #757575 !important;
+        font-size: 10px;
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        margin: 0 8px 5px 8px;
+      }
+
+      @media screen and (max-width: 782px) {
+        .newsletter-subscription .header {
+          flex-direction: row-reverse;
+          justify-content: space-between;
+        }
+        .newsletter-subscription .header h3.mobile {
+          display: block;
+        }
+        .newsletter-subscription .header h3.desktop {
+          display: none;
+        }
+        .newsletter-subscription .header h3 {
+          font-size: 20px;
+        }
+      }
+    </style>
+
+    <div class="newsletter-subscription" id="formContainer">
+      <div class="header">
+        <img
+          src="https://cdn.businessinsider.de/wp-content/uploads/2021/12/newsletter-mailbox.png"
+          alt="newsletter icon"
+        />
+        <h3 class="desktop">Noch mehr News von uns in deine Inbox.</h3>
+        <h3 class="mobile">Unsere Newsletter</h3>
+      </div>
+
+      <div id="kajomi-script-container"></div>
+
+      <div class="newl-refer2">
+        <p>
+          Durch den Klick auf “Anmelden” stimme ich zu, dass mir Business
+          Insider mit dem Newsletter auch Medienangebote (z.B. Abos, Events) und
+          sonstige Werbung zusendet. Mein Einverständnis kann ich jederzeit
+          widerrufen.
+          <a href="https://www.businessinsider.de/informationen/newsletter/"
+            >Hinweis zu Versand, Datenschutz & Widerruf</a
+          >
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      // Add kajomi script to the container element
+      const kajomiscript = document.createElement("script");
+      kajomiscript.setAttribute(
+        "src",
+        "https://nextgen.kajomigenerator.de/static/js/app_kajomi_helper.js?3"
+      );
+      const kajomiContainer = document.getElementById(
+        "kajomi-script-container"
+      );
+      var kajomiInterval = setInterval(waitForKajomi, 1000);
+      kajomiContainer.append(kajomiscript);
+
+      function waitForKajomi() {
+        if (typeof KajomiLandingPage !== "undefined") {
+          clearInterval(kajomiInterval);
+          var landingPage = new KajomiLandingPage(
+            "businessinsider.kjm6.de",
+            "a3012b60-4aca-453d-8d14-15c4042e145f"
+          );
+          landingPage.setWidth("100%");
+          landingPage.setResize(true);
+          // initially height if resize true it will resize automatically
+          landingPage.setHeight("234px");
+          landingPage.setTitle("Formular");
+          landingPage.setStyles(
+            "background-color:transparent;border:none;position:relative"
+          );
+          // if a variable should be passed from html page to the landingpage
+          //landingPage.setGetParameter({"epromo" : "epromo"});
+
+          landingPage.append("kajomi-script-container");
+        }
+      }
+    </script>
+
+    <!-- Copy: end -->
+  </body>
+</html>
