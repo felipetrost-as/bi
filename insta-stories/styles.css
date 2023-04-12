@@ -1,0 +1,18 @@
+.cleverpush-story-widget.cleverpush-story-widget-jPqBnZYbugHKYSyPt.cleverpush-story-widget-cards {
+  height: 220px !important;
+}
+.cleverpush-story-cards::-webkit-scrollbar {
+  display: none;
+}
+.cleverpush-story-cards {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  gap: 15px;
+}
+.cleverpush-story-item-wrap {
+  margin: 0 !important;
+  width: auto !important;
+  min-width: auto !important;
+  flex-shrink: 0 !important;
+  aspect-ratio: 3/4;
+}
