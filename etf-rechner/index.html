@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      @font-face {
+        font-family: "LabGrotesque-Black-C";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: "LabGrotesque-C";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+            format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .form-container * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .form-container {
+        padding: 40px;
+        --form-padding: 40px;
+        width: fit-content;
+        /* box-shadow: 0 10px 10px #00000026; */
+        border: 1px solid #e8e9ea;
+        font-family: LabGrotesque-C, Helvetica, Arial, sans-serif;
+        border-radius: 15px;
+        /* max-width: 700px; */
+        width: 100%;
+        margin: auto;
+      }
+
+      .form-container > p.title,
+      .output .title {
+        font-family: LabGrotesque-Black-C, Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      .form-container form .inputs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .form-container .input-c {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+      }
+
+      .form-container .input-c > label {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .form-container .input-c .inputfield {
+        border: 1.5px solid #8ca8ac;
+        border-radius: 3px;
+        transition: border 0.2s ease;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        --padding: 16px;
+      }
+
+      .form-container .input-c .inputfield:focus-within {
+        border: solid 1.5px #096ffa;
+      }
+
+      .form-container .input-c .inputfield label {
+        padding: var(--padding);
+        font-family: LabGrotesque-C;
+      }
+
+      .form-container .input-c input {
+        padding: var(--padding);
+        padding-right: 0;
+        width: 100%;
+        margin-bottom: 0;
+      }
+
+      .form-container .input-c input:focus,
+      .form-container .input-c input {
+        border: none !important;
+        outline: none !important;
+      }
+
+      .form-container .input-c .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .form-container .input-c .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -60px;
+      }
+
+      .form-container .input-c .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+      }
+
+      .form-container .input-c .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+      .form-container .input-c label {
+        font-family: LabGrotesque-Black-C, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+      }
+
+      .form-container form > button {
+        display: block;
+        margin: auto;
+        text-transform: capitalize;
+        box-sizing: border-box;
+        font-family: LabGrotesque-Black-C, Helvetica, Arial, sans-serif;
+        text-transform: capitalize;
+        background-color: #000 !important;
+        letter-spacing: 2.58px;
+        height: fit-content;
+        background-image: none;
+        border: none;
+        outline: none;
+        padding: 15px 40px;
+        border-radius: 25px;
+        line-height: 14px;
+        color: #fff;
+        font-size: 12px;
+        letter-spacing: 2.57143px;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+        font-weight: 900;
+      }
+
+      @keyframes cool {
+        0% {
+          transform: rotate(0) scale(1);
+        }
+        50% {
+          transform: rotate(180) scale(2);
+        }
+        100% {
+          transform: rotate(359) scale(1);
+        }
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+
+        100% {
+          transform: rotate(359deg) scale(4);
+        }
+      }
+
+      .form-container form > button:hover {
+        background-color: #5299fb !important;
+        animation: rotation 2s infinite linear;
+      }
+      .form-container .output {
+        overflow: hidden;
+        max-height: 0;
+        transition: 1s all ease;
+      }
+
+      .form-container .output .title {
+        margin-top: var(--form-padding);
+        margin-bottom: 35px;
+      }
+
+      .form-container .output p {
+        font-size: 18px;
+      }
+
+      .form-container .result {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .form-container .result:last-child {
+        margin-top: 25px;
+      }
+    </style>
+    <div id="form1" class="form-container">
+      <p class="title">Der Sparrechner berechnet Dein Endkapital</p>
+      <!-- Form for semantic and submitting purposes -->
+      <form action="">
+        <div class="inputs">
+          <div class="input-c">
+            <label for="startkapital"
+              >Startkapital
+              <!-- <span class="tooltip">
+                &#9432;
+                <span class="tooltiptext">Tooltip Text</span>
+              </span> -->
+            </label>
+            <div class="inputfield">
+              <input
+                type="number"
+                name="startkapital"
+                id="startkapital"
+                step="any"
+                lang="de"
+                value="1000"
+                required
+              />
+              <label for="startkapital">&euro; </label>
+            </div>
+          </div>
+
+          <div class="input-c">
+            <label for="anlagedauer">Anlagedauer</label>
+            <div class="inputfield">
+              <input
+                type="number"
+                name="anlagedauer"
+                id="anlagedauer"
+                step="any"
+                lang="de"
+                value="10"
+                required
+              />
+              <label for="anlagedauer">Jahre</label>
+            </div>
+          </div>
+
+          <div class="input-c">
+            <label for="monatlichesparrate">Monatliche Sparrate</label>
+            <div class="inputfield">
+              <input
+                type="number"
+                name="monatlichesparrate"
+                id="monatlichesparrate"
+                step="any"
+                lang="de"
+                value="150"
+                required
+              />
+              <label for="monatlichesparrate">&euro; </label>
+            </div>
+          </div>
+
+          <div class="input-c">
+            <label for="jahreszins">Jahreszins</label>
+            <div class="inputfield">
+              <input
+                type="number"
+                name="jahreszins"
+                id="jahreszins"
+                step="any"
+                lang="de"
+                value="0.01"
+                required
+              />
+              <label for="jahreszins">%</label>
+            </div>
+          </div>
+        </div>
+
+        <button>Jetzt berechnen</button>
+      </form>
+      <div class="output">
+        <p class="title">Dein Ergebnis</p>
+        <p class="result">
+          <b>Einzahlungen</b> <span class="totalDeposited"></span>
+        </p>
+
+        <p class="result">
+          <b>Endkapital</b> <span class="calculation"></span>
+        </p>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("#form1 form");
+      const output = document.querySelector("#form1 .output");
+      const calculation = document.querySelector("#form1 .output .calculation");
+      const totalDeposited = document.querySelector(
+        "#form1 .output .totalDeposited"
+      );
+      // inputs
+      const startkapital = document.querySelector(
+        "#form1 input[name='startkapital']"
+      );
+      const anlagedauer = document.querySelector(
+        "#form1 input[name='anlagedauer']"
+      );
+      const monatlichesparrate = document.querySelector(
+        "#form1 input[name='monatlichesparrate']"
+      );
+      const jahreszins = document.querySelector(
+        "#form1 input[name='jahreszins']"
+      );
+
+      // e: startkapital
+      // t: monatliche sparrate
+      // i: perioden
+      // n: zinnsatz
+      function compoundedTotal(e, t, i, n) {
+        const s = e * Math.pow(1 + n / 100, i);
+        let r = 0,
+          o = 12 * i;
+        for (; 0 !== o; ) (r += t * Math.pow(1 + n / 100, o / 12)), (o -= 1);
+        return s + r;
+      }
+
+      function totalPayment(start, einzahlung, perioden) {
+        return start + 12 * perioden * einzahlung;
+      }
+      const formatter = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let total = totalPayment(
+          +startkapital.value,
+          +monatlichesparrate.value,
+          +anlagedauer.value
+        );
+        total = formatter.format(total);
+        totalDeposited.innerHTML = total;
+
+        let compunded = compoundedTotal(
+          +startkapital.value,
+          +monatlichesparrate.value,
+          +anlagedauer.value,
+          +jahreszins.value
+        );
+        compunded = formatter.format(compunded);
+        calculation.innerHTML = compunded;
+
+        output.style.maxHeight = "none";
+
+        output.scrollIntoView();
+      });
+    </script>
+  </body>
+</html>
