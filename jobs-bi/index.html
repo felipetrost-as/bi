@@ -39,7 +39,6 @@
 
       .job-wrapper > p.title {
         font-size: 22px;
-        font-weight: bold;
         margin-bottom: 30px;
         font-family: LabGrotesque-Black-C;
         text-align: center;
@@ -64,6 +63,9 @@
           (100% / var(--columns)) - var(--gap) + (var(--gap) / var(--columns))
         );
         margin-bottom: var(--gap);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
       @media (max-width: 768px) {
         .job-wrapper .job-container {
@@ -107,6 +109,7 @@
         font-family: LabGrotesque-C;
         font-size: 10px;
         color: #757575;
+        margin-top: 5px;
       }
       .job-wrapper .more-jobs-wrapper {
         text-align: center;
@@ -135,18 +138,12 @@
       .job .employer .name {
         font-size: 10px;
       }
-      .job .employer .name .location {
-        font-size: 12px;
-      }
 
       @media (max-width: 768px) {
         .job-wrapper .job .job-title {
           font-size: 16px;
         }
         .job .employer .name {
-          font-size: 14px;
-        }
-        .job .employer .name .location {
           font-size: 14px;
         }
       }
