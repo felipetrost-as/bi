@@ -1,0 +1,135 @@
+<style>
+  @font-face {
+    font-family: "LabGrotesque-Black-C";
+    src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+        format("woff2"),
+      url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .beliebte-artikeln {
+    margin-top: 60px;
+    text-align: left;
+    font-family: LabGrotesque-Black-C;
+    --padding-bottom: 10px;
+    --margin-bottom: 10px;
+  }
+
+  .beliebte-artikeln a {
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s ease border;
+    border-bottom: 1px solid transparent;
+  }
+
+  .beliebte-artikeln a:hover {
+    border-bottom: 1px solid black;
+  }
+
+  /* Alle direkte kinder */
+  .beliebte-artikeln > *,
+  .beliebte-artikeln .accordion > * {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e8e9ea;
+    margin-bottom: var(--margin-bottom);
+    padding-bottom: var(--padding-bottom);
+  }
+
+  .beliebte-artikeln > *:last-child {
+    border-bottom: none;
+  }
+
+  .beliebte-artikeln p {
+    color: #111111;
+    font-size: 13px;
+    letter-spacing: 2.08px;
+    margin-bottom: var(--margin-bottom);
+    text-transform: uppercase;
+  }
+
+  .beliebte-artikeln .accordion {
+    width: 100%;
+    display: block;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    /* Accordion stuff */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .beliebte-artikeln button.show {
+    width: fit-content;
+    margin-bottom: 0;
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    font-family: LabGrotesque-Black-C;
+    text-transform: uppercase;
+    padding: 1px 6px 1px 6px;
+    border: 1px solid #8ca8ac;
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 15px;
+  }
+
+  .beliebte-artikeln button.show:hover {
+    border: 1px solid #096ffa;
+  }
+</style>
+<section class="beliebte-artikeln">
+  <p>Beliebte Artikel</p>
+  <div>
+    <a href="https://google.com" class="artikel" title="title 1">
+      Das passiert mit euren Anteilen, wenn ihr gekündigt werdet
+    </a>
+  </div>
+  <div>
+    <a href="https://google.com" class="artikel" title="title 2">
+      Trend-Berufe 2023: Diese 25 Jobs sind jetzt besonders gefragt
+    </a>
+  </div>
+
+  <div class="accordion">
+    <div>
+      <a href="https://google.com" class="artikel" title="title 2">
+        So viel könnt ihr in einem Startup verdienen – als Einsteiger, Team-Lead
+        oder Chef
+      </a>
+    </div>
+    <div>
+      <a href="https://google.com" class="artikel" title="title 2">
+        So viel könnt ihr in einem Startup verdienen – als Einsteiger, Team-Lead
+        oder Chef
+      </a>
+    </div>
+    <div>
+      <a href="https://google.com" class="artikel" title="title 2">
+        So viel könnt ihr in einem Startup verdienen – als Einsteiger, Team-Lead
+        oder Chef
+      </a>
+    </div>
+  </div>
+  <button class="show">Mehr Anzeigen</button>
+</section>
+<script>
+  // I do it like this, so I don't change anything in the global scope
+  (() => {})();
+  const button = document.querySelector(".beliebte-artikeln .show");
+  const accordion = document.querySelector(".beliebte-artikeln .accordion");
+
+  button.addEventListener("click", () => {
+    if (accordion.style.maxHeight) {
+      button.innerHTML = "Mehr Anzeigen";
+      accordion.style.maxHeight = null;
+    } else {
+      accordion.style.maxHeight = accordion.scrollHeight + "px";
+      button.innerHTML = "Weniger Anzeigen";
+    }
+  });
+</script>
