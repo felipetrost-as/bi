@@ -71,7 +71,7 @@
     letter-spacing: 0.6px;
     font-family: LabGrotesque-Black-C;
     text-transform: uppercase;
-    padding: 1px 6px 1px 6px;
+    padding: 4px 12px 4px 12px;
     border: 1px solid #8ca8ac;
     transition: all 0.3s ease;
     background: white;
@@ -119,17 +119,19 @@
 </section>
 <script>
   // I do it like this, so I don't change anything in the global scope
-  (() => {})();
-  const button = document.querySelector(".beliebte-artikeln .show");
-  const accordion = document.querySelector(".beliebte-artikeln .accordion");
+  {
+    let test = "changed";
+    const button = document.querySelector(".beliebte-artikeln .show");
+    const accordion = document.querySelector(".beliebte-artikeln .accordion");
 
-  button.addEventListener("click", () => {
-    if (accordion.style.maxHeight) {
-      button.innerHTML = "Mehr Anzeigen";
-      accordion.style.maxHeight = null;
-    } else {
-      accordion.style.maxHeight = accordion.scrollHeight + "px";
-      button.innerHTML = "Weniger Anzeigen";
-    }
-  });
+    button.addEventListener("click", () => {
+      if (accordion.style.maxHeight) {
+        button.innerHTML = "Mehr Anzeigen";
+        accordion.style.maxHeight = null;
+      } else {
+        accordion.style.maxHeight = accordion.scrollHeight + "px";
+        button.innerHTML = "Weniger Anzeigen";
+      }
+    });
+  }
 </script>
