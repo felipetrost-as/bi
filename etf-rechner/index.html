@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- copy: start -->
     <style>
       @font-face {
         font-family: "LabGrotesque-Black-C";
@@ -60,6 +61,7 @@
         justify-content: space-between;
         margin-bottom: 40px;
       }
+
       .form-container .input-c {
         display: flex;
         flex-direction: column;
@@ -72,6 +74,7 @@
       }
 
       .form-container .input-c .inputfield {
+        width: 100%;
         border: 1.5px solid #8ca8ac;
         border-radius: 3px;
         transition: border 0.2s ease;
@@ -96,6 +99,7 @@
         padding-right: 0;
         width: 100%;
         margin-bottom: 0;
+        font-family: LabGrotesque-C;
       }
 
       .form-container .input-c input:focus,
@@ -165,34 +169,12 @@
         letter-spacing: 2.57143px;
         text-transform: uppercase;
         transition: all 0.2s ease;
-        font-weight: 900;
-      }
-
-      @keyframes cool {
-        0% {
-          transform: rotate(0) scale(1);
-        }
-        50% {
-          transform: rotate(180) scale(2);
-        }
-        100% {
-          transform: rotate(359) scale(1);
-        }
-      }
-      @keyframes rotation {
-        0% {
-          transform: rotate(0deg) scale(1);
-        }
-
-        100% {
-          transform: rotate(359deg) scale(4);
-        }
       }
 
       .form-container form > button:hover {
-        background-color: #5299fb !important;
-        animation: rotation 2s infinite linear;
+        background-color: #096ffa !important;
       }
+
       .form-container .output {
         overflow: hidden;
         max-height: 0;
@@ -213,12 +195,25 @@
         justify-content: space-between;
       }
 
-      .form-container .result:last-child {
+      .form-container .result {
         margin-top: 25px;
+      }
+
+      .form-container .result:first-child {
+        margin-top: 0px;
+      }
+
+      @media screen and (max-width: 782px) {
+        .form-container form .inputs {
+          flex-direction: column;
+        }
+        .form-container .input-c {
+          width: 100%;
+        }
       }
     </style>
     <div id="form1" class="form-container">
-      <p class="title">Der Sparrechner berechnet Dein Endkapital</p>
+      <p class="title">Hier berechnet ihr eurer Endkapital</p>
       <!-- Form for semantic and submitting purposes -->
       <form action="">
         <div class="inputs">
@@ -298,20 +293,22 @@
       <div class="output">
         <p class="title">Dein Ergebnis</p>
         <p class="result">
-          <b>Einzahlungen</b> <span class="totalDeposited"></span>
+          <span>Einzahlungen</span> <span id="totalDeposited"></span>
         </p>
-
+        <p class="result"><span>Einzahlungen</span> <span id="taxes"></span></p>
         <p class="result">
-          <b>Endkapital</b> <span class="calculation"></span>
+          <span>Endkapital</span> <span id="calculation"></span>
         </p>
       </div>
     </div>
     <script>
       const form = document.querySelector("#form1 form");
+      const formButton = document.querySelector("#form1 form button");
       const output = document.querySelector("#form1 .output");
-      const calculation = document.querySelector("#form1 .output .calculation");
+      const calculation = document.querySelector("#form1 .output #calculation");
+      const taxes = document.querySelector("#form1 .output #taxes");
       const totalDeposited = document.querySelector(
-        "#form1 .output .totalDeposited"
+        "#form1 .output #totalDeposited"
       );
       // inputs
       const startkapital = document.querySelector(
@@ -339,6 +336,20 @@
         return s + r;
       }
 
+      function _compoundedTotal(e, t, i, n) {
+        let s = e * Math.pow(1 + n / 100, i);
+        let up =
+          Math.pow(10, 5 / 6) *
+          Math.pow(n + 100, 1 / 12) *
+          t *
+          (((n / 100 + 1) ^ i) - 1);
+        up /= Math.pow(10, 5 / 6) * Math.pow(n + 100, 1 / 12) - 10;
+
+        // for (let o = 1; o < 12 * i + 1; o++)
+        //   s += t * Math.pow(1 + n / 100, o / 12);
+        return s + up;
+      }
+
       function totalPayment(start, einzahlung, perioden) {
         return start + 12 * perioden * einzahlung;
       }
@@ -350,27 +361,41 @@
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let total = totalPayment(
+        const total = totalPayment(
           +startkapital.value,
           +monatlichesparrate.value,
           +anlagedauer.value
         );
-        total = formatter.format(total);
-        totalDeposited.innerHTML = total;
+        const totalString = formatter.format(total);
+        totalDeposited.innerHTML = totalString;
 
-        let compunded = compoundedTotal(
+        const compunded = compoundedTotal(
           +startkapital.value,
           +monatlichesparrate.value,
           +anlagedauer.value,
           +jahreszins.value
         );
-        compunded = formatter.format(compunded);
-        calculation.innerHTML = compunded;
+        alert(
+          _compoundedTotal(
+            +startkapital.value,
+            +monatlichesparrate.value,
+            +anlagedauer.value,
+            +jahreszins.value
+          )
+        );
+        const compundedString = formatter.format(compunded);
+        calculation.innerHTML = compundedString;
+
+        const taxesT = compunded - total;
+        const taxesString = formatter.format(taxesT);
+        taxes.innerHTML = taxesString;
 
         output.style.maxHeight = "none";
 
-        output.scrollIntoView();
+        formButton.scrollIntoView();
       });
     </script>
+
+    <!-- copy: end -->
   </body>
 </html>

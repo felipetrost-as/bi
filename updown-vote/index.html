@@ -14,11 +14,13 @@
         font-family: Custom-TiemposTextWeb-Regular;
         font-style: normal;
         font-weight: 400;
-        src: url(fonts/TiemposTextWeb-Regular.woff2) format("woff2"),
-          url(fonts/TiemposTextWeb-Regular.woff) format("woff"),
-          url(fonts/TiemposTextWeb-Regular.eot) format("svg");
+        src: url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff2")
+            format("woff2"),
+          url("https://www.businessinsider.de/wp-content/themes/business-insider-de/dist/fonts/TiemposTextWeb-Regular.woff")
+            format("woff");
         text-rendering: optimizelegibility;
       }
+
       @font-face {
         font-family: "LabGrotesque-Black-C";
         src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
@@ -112,6 +114,14 @@
         text-align: center;
         margin: 0;
         padding: 0;
+      }
+      @media screen and (max-width: 782px) {
+        .updown {
+          flex-direction: column;
+        }
+        .updown .title {
+          margin-bottom: 20px;
+        }
       }
     </style>
 

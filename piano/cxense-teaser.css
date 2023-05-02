@@ -1,8 +1,18 @@
 @font-face {
-  font-family: "Lab Grotesque";
+  font-family: "LabGrotesque-C";
   src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
       format("woff2"),
     url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LabGrotesque-Black-C";
+  src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+      format("woff2"),
+    url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
       format("woff");
   font-weight: normal;
   font-style: normal;
@@ -18,7 +28,7 @@
   --cx-text-color: black;
   --cx-text-hover-color: #000;
   --cx-font-size: 22px;
-  --cx-font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif;
+  --cx-font-family: LabGrotesque-Black-C, Helvetica, Arial, sans-serif;
   --cx-border-color: #ddd;
   margin: 0 0 10px;
   background: var(--cx-background-color);
@@ -34,7 +44,7 @@
     --cx-text-color: black;
     --cx-text-hover-color: #000;
     --cx-font-size: 16px;
-    --cx-font-family: LabGrotesque-Black, Helvetica, Arial, sans-serif;
+    --cx-font-family: LabGrotesque-Black-C, Helvetica, Arial, sans-serif;
     --cx-border-color: #ddd;
     /* margin: 0 0 10px; */
     background: var(--cx-background-color);
@@ -55,6 +65,10 @@
   justify-content: center;
   flex-direction: row;
   margin-bottom: 5px;
+}
+
+.horizontal h4 {
+  margin: 0;
 }
 
 .gap {
@@ -78,7 +92,7 @@
 }
 
 h4 {
-  font-family: "LabGrotesque Black", Helvetica, sans-serif;
+  font-family: LabGrotesqueBlack-C, Helvetica, sans-serif;
   color: #096ffa;
   font-size: 10px;
   font-weight: bold;

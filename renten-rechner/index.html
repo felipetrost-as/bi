@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  '
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <!-- copy: start -->
+    <script>
+      const monthList = [
+        [1946, 0],
+        [1947, 1],
+        [1948, 2],
+        [1949, 3],
+        [1950, 4],
+        [1951, 5],
+        [1952, 6],
+        [1953, 7],
+        [1954, 8],
+        [1955, 9],
+        [1956, 10],
+        [1957, 11],
+        [1958, 0],
+        [1959, 2],
+        [1960, 4],
+        [1961, 6],
+        [1962, 8],
+        [1963, 10],
+      ];
+      const monthsMap = new Map(monthList);
+
+      function firstOfNextMonth(date) {
+        if (date.getMonth() == 11) {
+          return new Date(date.getFullYear() + 1, 0, 1);
+        } else {
+          return new Date(date.getFullYear(), date.getMonth() + 1, 1);
+        }
+      }
+
+      function regelRente(birth, behindert) {
+        birth = new Date(birth.getTime()); // clone date to leave original intact
+        const year = birth.getFullYear();
+        // const birth = new Date();
+
+        if (birth.getFullYear() < 1946) {
+          alert("du bist zu alt");
+          return;
+        }
+        // Allgemein
+        if (!behindert) {
+          if (year >= 1964) {
+            birth.setFullYear(year + 67);
+          } else {
+            birth.setFullYear(year + 65);
+            birth.setMonth(birth.getMonth() + monthsMap.get(year));
+          }
+          const end = birth;
+          const start = new Date(birth.getTime());
+          start.setFullYear(start.getFullYear() - 4);
+          return [start, end];
+        }
+        // Schwerbehindert
+        else if (behindert) {
+          if (year >= 1964) {
+            const end = birth;
+            end.setFullYear(end.getFullYear() + )
+            const start = new Date(birth.getTime());
+            start.setFullYear(start.getFullYear() - 62);
+            return [start, end];
+          } else {
+            birth.setFullYear(year + 65);
+            birth.setMonth(birth.getMonth() + monthsMap.get(year));
+          }
+        }
+
+        return firstOfNextMonth(birth);
+      }
+
+      function discount(supposed, desired) {
+        if (desired > supposed) {
+          alert("Du willst mehr Arbeiten?");
+        }
+      }
+
+      const test = new Date(1996, 7 - 1, 20);
+
+      console.log(regelRente(test));
+    </script>
+    <!-- copy: end -->
+  </body>
+</html>
