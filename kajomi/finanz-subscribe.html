@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <style>
+      @font-face {
+        font-family: "Custom-LabGrotesque-Black";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+            format("woff");
+        /* font-weight: bold; */
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Custom-LabGrotesque";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Regular.woff")
+            format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      div[data-type="newline"] .row:last-child div.column-0 {
+        width: 63%;
+      }
+      div[data-type="newline"] .row:last-child div.column-1 {
+        width: 33%;
+      }
+      div[data-type="newline"] .row button {
+        border-radius: 25px;
+      }
+
+      .labelText > span > :first-child {
+        font-family: Custom-LabGrotesque-Black;
+      }
+
+      .labelText > span > :last-child {
+        font-family: Custom-LabGrotesque;
+        color: #4a4a4a;
+      }
+
+      .btn-primary.button {
+        text-transform: uppercase;
+        letter-spacing: 2.57px;
+        font-family: Custom-LabGrotesque-Black;
+        font-weight: normal;
+        font-size: 12px;
+        background-color: #000;
+      }
+
+      .btn-primary.button:hover {
+        background-color: #096ffa;
+      }
+
+      input[type="text"] {
+        border: 1px solid #8ca8ac !important;
+        color: #757575 !important;
+      }
+
+      span.title {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .globalSuccess {
+        font-family: Custom-LabGrotesque !important;
+      }
+
+      div[data-type="newline"] .row:last-child {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @media screen and (max-width: 500px) {
+        div[data-type="newline"] .row:last-child div:first-child {
+          margin-bottom: 20px;
+        }
+        div[data-type="newline"] .row:last-child div.column-0 {
+          width: 100%;
+        }
+        div[data-type="newline"] .row:last-child div.column-1 {
+          width: 90%;
+        }
+      }
+    </style>
+
+    <script src="//nextgen.kajomigenerator.de/static/js/app_kajomi_helper.js?v=3.1"></script>
+    <script>
+          var signature = [[raw kjm.json_dumps(kjm.signature('POST', '/signature/users', 'listnum=18&x_kjm_fix=listnum,user9&email=&user9=WP-Piano-Bullets')) ]];
+          var webform = new KajomiWebform({"primaryColor":"#096ffa","fontSize":"16px","fontFamily":"Arial","listnum":"18","type":"subscribe"});
+          webform.addSignature(signature);
+          webform.addGroup('inline-block');
+          webform.push({"mapping": "email", "label": "", "placeholder": "E-Mail-Adresse eingeben", "type": "input", "value": "", "required": "required", "checked": "unchecked", "guid": "g14677", "validation": [{"regex": "^[^@]+@[^@]+.[^@]+$"}]});
+          webform.push({"mapping": "", "label": "", "placeholder": "", "type": "button", "value": "Jetzt anmelden", "required": "optional", "checked": "unchecked", "guid": "g24677", "validation": [{"regex": "^.{1,}$"}]});
+          webform.closeGroup();
+          webform.addValue('email', [[raw kjm.json_dumps(%email%) ]]);
+          var translate = webform.trans.translation
+      translate.es="no disponible"
+          webform.show();
+    </script>
+  </body>
+</html>
