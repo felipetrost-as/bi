@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <!-- copy: start -->
+    <style>
+      @font-face {
+        font-family: "LabGrotesque-Black-C";
+        src: url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff2")
+            format("woff2"),
+          url("//media.businessinsider.com/public/fonts/LabGrotesque-Black.woff")
+            format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: ;
+        src: url(data:font/;);
+      }
+
+      .newsticker-cxense {
+        --font-size-title: 16px;
+        --font-size-article: 18px;
+      }
+      .newsticker-cxense a {
+        font-family: "LabGrotesque-Black-C";
+        display: block;
+        color: #000;
+        text-decoration: none;
+      }
+      .newsticker-cxense a.title {
+        font-size: var(--font-size-title);
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .newsticker-cxense a.title span {
+        font-size: 13px;
+      }
+
+      .newsticker-cxense .container a {
+        font-size: var(--font-size-title);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+      .newsticker-cxense .container a:not(:last-child) {
+        border-bottom: 1px solid #e8e9ea;
+      }
+      .newsticker-cxense .container a:hover {
+        text-decoration: underline;
+      }
+      @media screen and (max-width: 782px) {
+        .newsticker-cxense {
+          --font-size-title: 14px;
+        }
+      }
+    </style>
+
+    <section class="newsticker-cxense">
+      <a class="title">Newsticker <span> 〉</span></a>
+
+      <div class="container">
+        <!--%
+  var items = data.response.items;
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    var itemImage = item.dominantthumbnail || '';
+  %-->
+
+        <a href="{{item.url}}">{{item.title}}</a>
+
+        <!--% } %-->
+      </div>
+    </section>
+    <!-- copy: end -->
+  </body>
+</html>
